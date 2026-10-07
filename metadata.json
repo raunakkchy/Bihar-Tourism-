@@ -1,0 +1,8 @@
+{
+  "name": "Remix Bihar Tourism — Explore. Experience. Remember.",
+  "description": "Discover the Soul of Bihar. A premium, modern multi-page tourism website exploring Bodh Gaya, Nalanda, Rajgir, Vaishali, Patna, Valmiki Tiger Reserve, cultural heritage, and travel experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

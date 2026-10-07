@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skySasaram" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#191f24"/>
+      <stop offset="45%" stop-color="#413024"/>
+      <stop offset="80%" stop-color="#87512d"/>
+      <stop offset="100%" stop-color="#e8a86a"/>
+    </linearGradient>
+    <linearGradient id="sandstoneMausoleum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eeb47f"/>
+      <stop offset="40%" stop-color="#b66532"/>
+      <stop offset="100%" stop-color="#5a290e"/>
+    </linearGradient>
+    <linearGradient id="lakeWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b4d57"/>
+      <stop offset="100%" stop-color="#141a1e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skySasaram)"/>
+
+  <!-- Vast Artificial Lake (Tank) -->
+  <rect y="410" width="800" height="190" fill="url(#lakeWater)"/>
+  
+  <!-- Subtle Reflection of Dome on Lake -->
+  <ellipse cx="400" cy="460" rx="140" ry="20" fill="#b66532" opacity="0.4"/>
+  <ellipse cx="400" cy="500" rx="180" ry="15" fill="#87512d" opacity="0.3"/>
+
+  <!-- Stepped Lake Ghat Edge & Causeway Causeway Pier -->
+  <polygon points="360,420 440,420 460,600 340,600" fill="#2d1c14"/>
+
+  <!-- Grand Octagonal Mausoleum of Sher Shah Suri -->
+  <g transform="translate(400, 310)">
+    <!-- High Plinth Base (Octagonal Terrace) -->
+    <polygon points="-220,100 220,100 180,60 -180,60" fill="url(#sandstoneMausoleum)"/>
+    <rect x="-240" y="95" width="480" height="15" fill="#321609"/>
+
+    <!-- Middle Octagonal Arcade Verandah -->
+    <rect x="-150" y="0" width="300" height="60" fill="url(#sandstoneMausoleum)"/>
+    
+    <!-- 24 Domed Chattris / Pavilions around the tiers -->
+    <g fill="#431c0b">
+      <rect x="-140" y="-15" width="22" height="15"/>
+      <circle cx="-129" cy="-18" r="11"/>
+      <rect x="-80" y="-15" width="22" height="15"/>
+      <circle cx="-69" cy="-18" r="11"/>
+      <rect x="58" y="-15" width="22" height="15"/>
+      <circle cx="69" cy="-18" r="11"/>
+      <rect x="118" y="-15" width="22" height="15"/>
+      <circle cx="129" cy="-18" r="11"/>
+    </g>
+
+    <!-- Upper Octagonal Drum -->
+    <rect x="-105" y="-60" width="210" height="60" fill="url(#sandstoneMausoleum)"/>
+
+    <!-- Magnificent Central Dome (Spans 22 meters) -->
+    <path d="M-85,-60 C-85,-160 85,-160 85,-60 Z" fill="url(#sandstoneMausoleum)"/>
+
+    <!-- Lotus Finial & Golden Kalash Top -->
+    <circle cx="0" cy="-165" r="9" fill="#fcd34d"/>
+    <polygon points="0,-195 -4,-165 4,-165" fill="#fef08a"/>
+    <circle cx="0" cy="-198" r="3" fill="#ffffff"/>
+
+    <!-- Arched Openings on Verandah -->
+    <path d="M-120,40 A15,15 0 0,1 -90,40 L-90,60 L-120,60 Z" fill="#1e0b04"/>
+    <path d="M-60,40 A15,15 0 0,1 -30,40 L-30,60 L-60,60 Z" fill="#1e0b04"/>
+    <path d="M-15,40 A15,15 0 0,1 15,40 L15,60 L-15,60 Z" fill="#1e0b04"/>
+    <path d="M30,40 A15,15 0 0,1 60,40 L60,60 L30,60 Z" fill="#1e0b04"/>
+    <path d="M90,40 A15,15 0 0,1 120,40 L120,60 L90,60 Z" fill="#1e0b04"/>
+  </g>
+</svg>

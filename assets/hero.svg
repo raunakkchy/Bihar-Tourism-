@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#140b07"/>
+      <stop offset="35%" stop-color="#3d1808"/>
+      <stop offset="65%" stop-color="#83380e"/>
+      <stop offset="85%" stop-color="#ca7425"/>
+      <stop offset="100%" stop-color="#f5ba68"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="58%" r="45%">
+      <stop offset="0%" stop-color="#fff2c6" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#fca334" stop-opacity="0.6"/>
+      <stop offset="55%" stop-color="#d65715" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#83380e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4d220b"/>
+      <stop offset="40%" stop-color="#241208"/>
+      <stop offset="100%" stop-color="#0c0704"/>
+    </linearGradient>
+    <linearGradient id="templeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbc06d"/>
+      <stop offset="30%" stop-color="#b45115"/>
+      <stop offset="80%" stop-color="#5a2307"/>
+      <stop offset="100%" stop-color="#2a0f03"/>
+    </linearGradient>
+    <linearGradient id="silhouetteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b1707"/>
+      <stop offset="100%" stop-color="#120602"/>
+    </linearGradient>
+    <filter id="mistBlur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+
+  <!-- Golden Spiritual Sun & Rays -->
+  <circle cx="800" cy="520" r="160" fill="url(#sunGlow)"/>
+  <circle cx="800" cy="520" r="60" fill="#fff5d0" opacity="0.85"/>
+
+  <!-- Distant Himalayan & Rajgir Hills -->
+  <path d="M0,620 Q300,560 620,590 T1200,570 Q1450,550 1600,600 L1600,750 L0,750 Z" fill="#2e1205" opacity="0.75"/>
+  <path d="M0,640 Q400,600 780,625 T1600,620 L1600,760 L0,760 Z" fill="#200d04" opacity="0.85"/>
+
+  <!-- Sacred River Ganges / Lotus Water Surface -->
+  <rect y="680" width="1600" height="220" fill="url(#waterGrad)"/>
+  
+  <!-- Subtle Water Ripples & Gold Reflections -->
+  <ellipse cx="800" cy="710" rx="220" ry="8" fill="#fca334" opacity="0.4" filter="url(#mistBlur)"/>
+  <ellipse cx="800" cy="740" rx="340" ry="12" fill="#d65715" opacity="0.3" filter="url(#mistBlur)"/>
+  <ellipse cx="800" cy="790" rx="460" ry="16" fill="#ca7425" opacity="0.2" filter="url(#mistBlur)"/>
+
+  <!-- Bodh Gaya Mahabodhi Temple Silhouette (Center) -->
+  <g transform="translate(800, 520)">
+    <!-- Base Platform -->
+    <rect x="-110" y="90" width="220" height="70" fill="url(#templeGrad)" rx="2"/>
+    <rect x="-125" y="140" width="250" height="25" fill="#301004"/>
+
+    <!-- Main Tower Shikhara -->
+    <polygon points="0,-320 -70,90 70,90" fill="url(#templeGrad)"/>
+    
+    <!-- Shikhara Tier Carvings & Niches -->
+    <line x1="-15" y1="-260" x2="15" y2="-260" stroke="#fce4a6" stroke-width="3" opacity="0.7"/>
+    <line x1="-25" y1="-210" x2="25" y2="-210" stroke="#fce4a6" stroke-width="4" opacity="0.7"/>
+    <line x1="-38" y1="-150" x2="38" y2="-150" stroke="#fce4a6" stroke-width="5" opacity="0.6"/>
+    <line x1="-50" y1="-90" x2="50" y2="-90" stroke="#fce4a6" stroke-width="6" opacity="0.6"/>
+    <line x1="-60" y1="-30" x2="60" y2="-30" stroke="#fce4a6" stroke-width="6" opacity="0.6"/>
+    <line x1="-66" y1="30" x2="66" y2="30" stroke="#fce4a6" stroke-width="7" opacity="0.5"/>
+
+    <!-- Central Finial / Kalasha & Amalaka -->
+    <circle cx="0" cy="-330" r="10" fill="#ffdf8a"/>
+    <polygon points="0,-365 -4,-330 4,-330" fill="#ffeaa8"/>
+    <circle cx="0" cy="-368" r="4" fill="#ffffff"/>
+
+    <!-- 4 Corner Subsidiary Towers -->
+    <polygon points="-85,10 -105,90 -65,90" fill="url(#templeGrad)"/>
+    <polygon points="-85,-10 -87,10 -83,10" fill="#fce4a6"/>
+    <polygon points="85,10 65,90 105,90" fill="url(#templeGrad)"/>
+    <polygon points="85,-10 83,10 87,10" fill="#fce4a6"/>
+
+    <!-- Central Niche with Buddha Image -->
+    <rect x="-24" y="95" width="48" height="55" rx="14" fill="#150602"/>
+    <circle cx="0" cy="115" r="9" fill="#ffcf66"/>
+    <path d="M-15,145 Q0,125 15,145 Z" fill="#ffcf66"/>
+  </g>
+
+  <!-- Sacred Bodhi Tree Canopy on Left -->
+  <g transform="translate(360, 470)" fill="url(#silhouetteGrad)">
+    <path d="M-80,210 Q-60,70 -30,-40 Q0,-120 40,-180 Q80,-110 50,50 Q40,140 30,210 Z"/>
+    <!-- Foliage clouds -->
+    <circle cx="-60" cy="-140" r="95" opacity="0.95"/>
+    <circle cx="20" cy="-190" r="115" opacity="0.98"/>
+    <circle cx="100" cy="-130" r="85" opacity="0.92"/>
+    <circle cx="-130" cy="-80" r="75" opacity="0.9"/>
+    <circle cx="140" cy="-60" r="75" opacity="0.9"/>
+    <circle cx="-20" cy="-90" r="100" opacity="0.95"/>
+    <!-- Sacred fluttering leaves glow -->
+    <circle cx="70" cy="-210" r="3" fill="#ffe699"/>
+    <circle cx="-80" cy="-160" r="2.5" fill="#ffe699"/>
+    <circle cx="120" cy="-90" r="2" fill="#ffe699"/>
+  </g>
+
+  <!-- Ashokan Stupa & Monks Silhouette on Right -->
+  <g transform="translate(1250, 560)">
+    <!-- Hemispherical Stupa -->
+    <path d="M-90,120 A90,85 0 0,1 90,120 Z" fill="url(#silhouetteGrad)"/>
+    <rect x="-20" y="25" width="40" height="15" fill="#240c03"/>
+    <polygon points="0,5 -6,25 6,25" fill="#3b1707"/>
+    <!-- Monks meditating in serenity -->
+    <g transform="translate(-140, 105)">
+      <circle cx="0" cy="0" r="7" fill="#240c03"/>
+      <path d="M-12,22 Q0,6 12,22 Z" fill="#240c03"/>
+    </g>
+    <g transform="translate(-170, 108)">
+      <circle cx="0" cy="0" r="6" fill="#240c03"/>
+      <path d="M-10,19 Q0,5 10,19 Z" fill="#240c03"/>
+    </g>
+  </g>
+
+  <!-- Golden Atmospheric Mist Veil -->
+  <rect y="640" width="1600" height="60" fill="#fca334" opacity="0.15" filter="url(#mistBlur)"/>
+</svg>

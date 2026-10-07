@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Portal Login — Bihar Tourism</title>
+    <meta name="description" content="Secure administrative login for Bihar State Tourism Development Corporation enquiry management and digital portal administration." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <div class="admin-login-wrapper">
+      <div class="admin-login-card">
+        <div class="admin-login-header">
+          <a href="/index.html" class="admin-login-logo">
+            <svg style="width: 28px; height: 28px; color: #c84b31;" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M8.2 23.8L23.8 8.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3.5" fill="currentColor"/>
+            </svg>
+            Bihar <span>Tourism</span>
+          </a>
+          <br />
+          <span class="admin-login-badge">Restricted Access · Official Portal</span>
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0 0.25rem 0;">Tourism Desk Sign In</h2>
+          <p class="admin-login-subtitle">Enter your official credentials to manage traveler inquiries and tourism catalog.</p>
+        </div>
+
+        <!-- Demo Credentials Helper for Quick Evaluation -->
+        <div class="demo-credentials-box">
+          <div class="demo-credentials-title">
+            <span>🔑 Default Admin Credentials</span>
+            <button type="button" id="fill-demo-btn" class="btn-fill-demo">One-Click Fill</button>
+          </div>
+          <p class="demo-credentials-text">
+            <strong>Email:</strong> admin@bihartourism.gov.in<br />
+            <strong>Password:</strong> Admin@Bihar2025
+          </p>
+        </div>
+
+        <!-- Alert Banner -->
+        <div id="login-alert" class="admin-alert admin-alert-error" role="alert"></div>
+
+        <!-- Login Form -->
+        <form id="admin-login-form">
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="login-email" style="font-weight: 600; font-size: 0.875rem;">
+              Admin Email / Username
+            </label>
+            <input 
+              type="text" 
+              id="login-email" 
+              name="email" 
+              class="form-control" 
+              placeholder="admin@bihartourism.gov.in" 
+              required 
+              autocomplete="username" 
+              style="padding: 0.75rem 1rem;"
+            />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label class="form-label" for="login-password" style="font-weight: 600; font-size: 0.875rem; margin: 0;">
+                Password
+              </label>
+              <button type="button" id="toggle-pwd-btn" style="background: none; border: none; font-size: 0.75rem; color: #64748b; cursor: pointer; text-decoration: underline;">
+                Show Password
+              </button>
+            </div>
+            <input 
+              type="password" 
+              id="login-password" 
+              name="password" 
+              class="form-control" 
+              placeholder="••••••••••••" 
+              required 
+              autocomplete="current-password" 
+              style="padding: 0.75rem 1rem;"
+            />
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-weight: 600;">
+            Sign In to Dashboard &rarr;
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid #f1f5f9;">
+          <a href="/index.html" style="font-size: 0.8125rem; color: #64748b; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+            &larr; Return to Public Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('admin-login-form');
+        const emailInput = document.getElementById('login-email');
+        const pwdInput = document.getElementById('login-password');
+        const alertBox = document.getElementById('login-alert');
+        const submitBtn = document.getElementById('login-submit-btn');
+        const fillDemoBtn = document.getElementById('fill-demo-btn');
+        const togglePwdBtn = document.getElementById('toggle-pwd-btn');
+
+        // Check if already authenticated or explicit logout
+        if (window.location.search.includes('logout')) {
+          localStorage.removeItem('admin_token');
+          sessionStorage.removeItem('admin_token');
+          localStorage.removeItem('admin_user');
+          sessionStorage.removeItem('admin_user');
+        } else {
+          const existingToken = localStorage.getItem('admin_token') || sessionStorage.getItem('admin_token');
+          if (existingToken) {
+            fetch('/api/admin/me', {
+              headers: {
+                'Authorization': `Bearer ${existingToken}`
+              },
+              credentials: 'include'
+            })
+            .then(res => res.json())
+            .then(data => {
+              if (data.success && data.admin) {
+                window.location.href = '/admin.html';
+              } else {
+                localStorage.removeItem('admin_token');
+                sessionStorage.removeItem('admin_token');
+              }
+            })
+            .catch(() => {});
+          }
+        }
+
+        // Fill Demo Credentials & Auto Sign-In
+        fillDemoBtn.addEventListener('click', () => {
+          emailInput.value = 'admin@bihartourism.gov.in';
+          pwdInput.value = 'Admin@Bihar2025';
+          showAlert('Demo credentials filled. Signing in...', false);
+          form.dispatchEvent(new Event('submit', { cancelable: true }));
+        });
+
+        // Toggle Password Visibility
+        togglePwdBtn.addEventListener('click', () => {
+          if (pwdInput.type === 'password') {
+            pwdInput.type = 'text';
+            togglePwdBtn.textContent = 'Hide Password';
+          } else {
+            pwdInput.type = 'password';
+            togglePwdBtn.textContent = 'Show Password';
+          }
+        });
+
+        function showAlert(msg, isError = true) {
+          alertBox.textContent = msg;
+          alertBox.className = isError ? 'admin-alert admin-alert-error' : 'admin-alert admin-alert-success';
+          alertBox.style.display = 'block';
+        }
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = emailInput.value.trim();
+          const password = pwdInput.value;
+
+          if (!email || !password) {
+            showAlert('Please enter both email and password.');
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Verifying Credentials...';
+
+          try {
+            const response = await fetch('/api/admin/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || !data.success) {
+              showAlert(data.error || 'Login failed. Please check your credentials.');
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Sign In to Dashboard →';
+              return;
+            }
+
+            // Success - save token persistently so it survives iframes and redirects
+            if (data.token) {
+              localStorage.setItem('admin_token', data.token);
+              sessionStorage.setItem('admin_token', data.token);
+              if (data.admin) {
+                localStorage.setItem('admin_user', JSON.stringify(data.admin));
+                sessionStorage.setItem('admin_user', JSON.stringify(data.admin));
+              }
+            }
+            showAlert('Login successful! Redirecting to Dashboard...', false);
+            setTimeout(() => {
+              window.location.href = '/admin.html';
+            }, 300);
+          } catch (err) {
+            showAlert('Connection error. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Sign In to Dashboard →';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

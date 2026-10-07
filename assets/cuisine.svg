@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="thaliMetal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eed8a1"/>
+      <stop offset="60%" stop-color="#caa357"/>
+      <stop offset="90%" stop-color="#936f2f"/>
+      <stop offset="100%" stop-color="#5a4114"/>
+    </radialGradient>
+    <radialGradient id="littiBake" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#e8a860"/>
+      <stop offset="50%" stop-color="#b86927"/>
+      <stop offset="85%" stop-color="#6a350c"/>
+      <stop offset="100%" stop-color="#3b1704"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Wooden Dining Board Surface -->
+  <rect width="800" height="600" fill="#25160d"/>
+  
+  <!-- Subtle Wood Planks -->
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#180e08" stroke-width="3"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="#180e08" stroke-width="3"/>
+
+  <!-- Traditional Bronze Kansa Thali (Plate) -->
+  <circle cx="360" cy="300" r="230" fill="url(#thaliMetal)"/>
+  <circle cx="360" cy="300" r="215" fill="#a47c32"/>
+  <circle cx="360" cy="300" r="200" fill="#d2ab5f"/>
+
+  <!-- Golden Cow Ghee Bowl (Katori) in Center -->
+  <circle cx="360" cy="300" r="50" fill="#a47c32"/>
+  <circle cx="360" cy="300" r="42" fill="#fde047"/>
+  <circle cx="355" cy="295" r="30" fill="#fef08a" opacity="0.8"/>
+
+  <!-- 3 Char-grilled Littis with aromatic sattu inside -->
+  <!-- Litti 1 -->
+  <circle cx="280" cy="230" r="42" fill="url(#littiBake)"/>
+  <!-- Char marks from cow dung fire / wood charcoal -->
+  <ellipse cx="270" cy="220" rx="12" ry="6" fill="#200d03" opacity="0.7"/>
+  <ellipse cx="295" cy="245" rx="8" ry="4" fill="#200d03" opacity="0.6"/>
+
+  <!-- Litti 2 -->
+  <circle cx="430" cy="220" r="44" fill="url(#littiBake)"/>
+  <ellipse cx="440" cy="210" rx="14" ry="7" fill="#200d03" opacity="0.7"/>
+  <ellipse cx="415" cy="235" rx="10" ry="5" fill="#200d03" opacity="0.6"/>
+
+  <!-- Litti 3 (Cracked open with melted ghee pouring into roasted sattu) -->
+  <circle cx="320" cy="380" r="46" fill="url(#littiBake)"/>
+  <ellipse cx="325" cy="375" rx="18" ry="8" fill="#fde047"/>
+  <ellipse cx="310" cy="390" rx="12" ry="5" fill="#200d03" opacity="0.7"/>
+
+  <!-- Roasted Baingan-Tamatar-Aloo Chokha Bowl -->
+  <circle cx="440" cy="360" r="48" fill="#a47c32"/>
+  <circle cx="440" cy="360" r="40" fill="#78350f"/>
+  <circle cx="435" cy="355" r="10" fill="#dc2626"/>
+  <circle cx="450" cy="365" r="12" fill="#15803d"/>
+  <circle cx="430" cy="370" r="8" fill="#b45309"/>
+
+  <!-- Green Chili & Onion salad -->
+  <path d="M220,330 Q230,310 245,340" stroke="#16a34a" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <ellipse cx="240" cy="350" rx="10" ry="6" fill="#f43f5e"/>
+
+  <!-- Champaran Ahuna Handi (Earthen Clay Pot Sealed with Dough) -->
+  <g transform="translate(640, 320)">
+    <!-- Clay Handi Body -->
+    <path d="M-60,70 C-75,30 -60,-20 -30,-40 L30,-40 C60,-20 75,30 60,70 Z" fill="#8c431b"/>
+    <!-- Sealed rim with kneaded wheat dough -->
+    <ellipse cx="0" cy="-40" rx="36" ry="12" fill="#d97706"/>
+    <ellipse cx="0" cy="-45" rx="30" ry="8" fill="#b45309"/>
+    <!-- Lid handle knob -->
+    <circle cx="0" cy="-55" r="10" fill="#78350f"/>
+    <!-- Glowing slow embers underneath -->
+    <ellipse cx="0" cy="75" rx="55" ry="10" fill="#ef4444" opacity="0.6"/>
+  </g>
+</svg>

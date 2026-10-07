@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Your Bihar Journey — Contact & Travel Desk</title>
+    <meta name="description" content="Plan your trip to Bihar. Submit your travel enquiry for Heritage, Spiritual, Nature, Food & Culture, or Complete Bihar Tour packages." />
+    <meta property="og:title" content="Plan Your Bihar Journey — Contact & Travel Desk" />
+    <meta property="og:description" content="Plan your trip to Bihar. Submit your travel enquiry for Heritage, Spiritual, Nature, Food & Culture, or Complete Bihar Tour packages." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+      <div class="container">
+        <div class="nav-row">
+          <!-- Zone 1: Brand Wordmark -->
+          <a href="/index.html" class="brand-mark" aria-label="Bihar Tourism Home">
+            <svg class="brand-icon-symbol" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M8.2 23.8L23.8 8.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3.5" fill="currentColor"/>
+            </svg>
+            Bihar <span>Tourism</span>
+          </a>
+
+          <!-- Zone 2: Navigation Links -->
+          <nav aria-label="Primary Navigation">
+            <ul class="nav-links">
+              <li><a href="/index.html" class="nav-link">Home</a></li>
+              <li><a href="/destinations.html" class="nav-link">Destinations</a></li>
+              <li><a href="/experiences.html" class="nav-link">Experiences</a></li>
+              <li><a href="/about.html" class="nav-link">About Bihar</a></li>
+              <li><a href="/contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Zone 3: Header Actions -->
+          <div class="header-actions">
+            <a href="/contact.html" class="btn-header-cta">Plan Your Journey</a>
+            <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span class="hamburger-line line-1"></span>
+              <span class="hamburger-line line-2"></span>
+              <span class="hamburger-line line-3"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop"></div>
+    <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <a href="/index.html" class="brand-mark">Bihar <span>Tourism</span></a>
+        <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="/destinations.html" class="mobile-nav-link">Destinations</a></li>
+        <li><a href="/experiences.html" class="mobile-nav-link">Experiences</a></li>
+        <li><a href="/about.html" class="mobile-nav-link">About Bihar</a></li>
+        <li><a href="/contact.html" class="mobile-nav-link active">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="/contact.html" class="btn btn-primary" style="width: 100%;">Plan a Trip</a>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Page Hero Header -->
+      <section class="page-header">
+        <div class="page-header-pattern"></div>
+        <div class="container page-header-content">
+          <span class="page-header-kicker">Travel Desk & Inquiries</span>
+          <h1 class="page-header-title">Plan Your Bihar Journey</h1>
+          <p class="page-header-desc">
+            Submit your personalized travel inquiry below. Our certified Bihar tourism coordinators will craft a customized itinerary with verified accommodations and guides.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Form & Contact Information Section -->
+      <section class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left Column: The Enquiry Form & Confirmation Card -->
+            <div class="planner-card reveal">
+              <!-- Attractive Confirmation Card (Displayed after successful frontend submission) -->
+              <div id="contact-confirmation-card" class="contact-confirmation-card" role="alert" aria-live="polite">
+                <div class="confirmation-check-circle" aria-hidden="true">
+                  ✓
+                </div>
+                <h2 class="confirmation-title">Thank you! Your enquiry has been received.</h2>
+                <p class="confirmation-lead">
+                  We have recorded your travel interests in our official tourism booking system. Your reference ID is <strong id="confirm-ref-id" style="color: var(--color-primary); font-family: monospace;">#ENQ-PENDING</strong>. Our travel coordinators will review your itinerary request promptly.
+                </p>
+
+                <!-- Enquiry Summary Box -->
+                <div class="confirmation-summary-box">
+                  <div class="confirmation-summary-row">
+                    <span class="confirmation-summary-label">Name:</span>
+                    <span id="confirm-name" class="confirmation-summary-value">—</span>
+                  </div>
+                  <div class="confirmation-summary-row">
+                    <span class="confirmation-summary-label">Email:</span>
+                    <span id="confirm-email" class="confirmation-summary-value">—</span>
+                  </div>
+                  <div class="confirmation-summary-row">
+                    <span class="confirmation-summary-label">WhatsApp Number:</span>
+                    <span id="confirm-whatsapp" class="confirmation-summary-value" style="color: #16a34a; font-weight: 600;">—</span>
+                  </div>
+                  <div class="confirmation-summary-row">
+                    <span class="confirmation-summary-label">Travel Interest:</span>
+                    <span id="confirm-interest" class="confirmation-summary-value">—</span>
+                  </div>
+                  <div class="confirmation-summary-row" style="flex-direction: column; gap: 0.25rem;">
+                    <span class="confirmation-summary-label">Your Message:</span>
+                    <span id="confirm-message" class="confirmation-summary-value" style="font-weight: 400; font-style: italic;">—</span>
+                  </div>
+                </div>
+
+                <!-- Instant WhatsApp Help Desk Connection Action -->
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; text-align: center;">
+                  <h4 style="color: #166534; margin: 0 0 0.35rem 0; font-size: 1rem;">Connect Instantly with Bihar Tourism on WhatsApp</h4>
+                  <p style="color: #15803d; font-size: 0.875rem; margin: 0 0 1rem 0;">Skip email wait time — tap below to open a direct WhatsApp chat with our tourist coordinator with your enquiry details pre-filled.</p>
+                  <a id="confirm-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.9375rem; padding: 0.85rem 1.5rem;">
+                    <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 32 32">
+                      <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.4 0-.6.2-.8.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2c0 1.9 1.4 3.7 1.6 3.9.2.3 2.7 4.1 6.5 5.8 3.9 1.6 3.9 1.1 4.6 1 .7 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+                    </svg>
+                    Chat with Tourism Desk on WhatsApp &rarr;
+                  </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                  <button type="button" id="send-another-btn" class="btn btn-outline">
+                    Send Another Enquiry
+                  </button>
+                  <a href="/destinations.html" class="btn btn-primary">
+                    Explore Destinations &rarr;
+                  </a>
+                </div>
+              </div>
+
+              <!-- Enquiry Form (Heading: Plan Your Bihar Journey) -->
+              <form id="bihar-enquiry-form" novalidate>
+                <span class="section-kicker">Personalized Itinerary Request</span>
+                <h2 style="font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 0.5rem;">
+                  Plan Your Bihar Journey
+                </h2>
+                <p style="font-size: 0.9375rem; color: var(--color-text-muted); margin-bottom: 2rem;">
+                  Please complete the fields below. Enter your contact details and WhatsApp number so our tourism coordinators can connect with you.
+                </p>
+
+                <!-- Server Error Alert Container -->
+                <div id="form-server-error" style="display: none; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.875rem;"></div>
+
+                <!-- 1. Full Name Field -->
+                <div class="form-group">
+                  <label class="form-label" for="name">
+                    Full Name <span style="color: var(--color-primary);">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    class="form-control" 
+                    placeholder="e.g. Ananya Sharma" 
+                    required 
+                    autocomplete="name"
+                  />
+                  <div id="error-name" class="form-field-error">Please enter your full name.</div>
+                </div>
+
+                <!-- 2. Email Field -->
+                <div class="form-group">
+                  <label class="form-label" for="email">
+                    Email Address <span style="color: var(--color-primary);">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-control" 
+                    placeholder="name@example.com" 
+                    required 
+                    autocomplete="email"
+                  />
+                  <div id="error-email" class="form-field-error">Please enter a valid email address.</div>
+                </div>
+
+                <!-- 3. WhatsApp Number Field (Indian Validation) -->
+                <div class="form-group">
+                  <label class="form-label" for="whatsapp">
+                    WhatsApp Number <span style="color: var(--color-primary);">*</span>
+                  </label>
+                  <div style="position: relative;">
+                    <input 
+                      type="tel" 
+                      id="whatsapp" 
+                      name="whatsapp" 
+                      class="form-control" 
+                      placeholder="e.g. 9876543210 or +91 98765 43210" 
+                      required 
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <small style="display: block; margin-top: 0.25rem; font-size: 0.75rem; color: var(--color-text-muted);">
+                    Used by our coordinators to share brochures, guide contacts, and verified hotel options via WhatsApp.
+                  </small>
+                  <div id="error-whatsapp" class="form-field-error">Please enter a valid 10-digit Indian WhatsApp number.</div>
+                </div>
+
+                <!-- 4. Interest Field -->
+                <div class="form-group">
+                  <label class="form-label" for="interest">
+                    Interest <span style="color: var(--color-primary);">*</span>
+                  </label>
+                  <select id="interest" name="interest" class="form-control" required>
+                    <option value="">Select an Area of Interest</option>
+                    <option value="Heritage">Heritage</option>
+                    <option value="Spiritual Journey">Spiritual Journey</option>
+                    <option value="Nature Escape">Nature Escape</option>
+                    <option value="Local Flavours">Local Flavours</option>
+                    <option value="Complete Bihar Trip">Complete Bihar Trip</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div id="error-interest" class="form-field-error">Please choose a travel interest.</div>
+                </div>
+
+                <!-- 5. Optional Travel Details Row -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                  <div>
+                    <label class="form-label" for="travelDates" style="font-size: 0.875rem;">
+                      Estimated Travel Dates
+                    </label>
+                    <input 
+                      type="text" 
+                      id="travelDates" 
+                      name="travelDates" 
+                      class="form-control" 
+                      placeholder="e.g. Nov 2026 / 5 Days"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label" for="travelers" style="font-size: 0.875rem;">
+                      No. of Travelers
+                    </label>
+                    <input 
+                      type="text" 
+                      id="travelers" 
+                      name="travelers" 
+                      class="form-control" 
+                      placeholder="e.g. 2 Adults, 1 Child"
+                    />
+                  </div>
+                </div>
+
+                <!-- 6. Message Field -->
+                <div class="form-group">
+                  <label class="form-label" for="message">
+                    Message <span style="color: var(--color-primary);">*</span>
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    class="form-control" 
+                    rows="4" 
+                    placeholder="Tell us about the destinations you wish to cover, special dietary preferences, transport requirements, or guide languages needed..." 
+                    required
+                  ></textarea>
+                  <div id="error-message" class="form-field-error">Please write your message or enquiry.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit-enquiry-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                  Submit Enquiry &rarr;
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Column: Official Contact & Enquiry Information Beside Form -->
+            <div class="contact-info-card reveal delay-100">
+              <div class="contact-info-block">
+                <h4>Bihar Tourism Development Headquarters</h4>
+                <p>
+                  <strong>Bihar State Tourism Development Corporation (BSTDC)</strong><br />
+                  Kautilya Vihar, Bir Chand Patel Path,<br />
+                  Patna, Bihar — 800001, India
+                </p>
+              </div>
+
+              <div class="contact-info-block">
+                <h4>Official Inquiries & Helplines</h4>
+                <p>
+                  <strong>Toll-Free Tourist Helpline:</strong> 1800-3456-789 (24x7 Support)<br />
+                  <strong>Direct Landline:</strong> +91 (612) 2225411 / 2222622<br />
+                  <strong>Official WhatsApp:</strong> +91 82980 76101<br />
+                  <strong>Official Email:</strong> helpdesk@bihartourism.gov.in / tours@bihartourism.gov.in
+                </p>
+              </div>
+
+              <div class="contact-info-block">
+                <h4>Airport & Hub Information Desks</h4>
+                <p>
+                  <strong>Patna Airport Counter:</strong> Terminal 1 Arrival Concourse<br />
+                  <strong>Gaya Airport Counter:</strong> International Terminal Lobby<br />
+                  <strong>Bodh Gaya Tourist Office:</strong> Opposite Mahabodhi Temple Complex<br />
+                  <strong>Rajgir Tourism Center:</strong> Near Kund Market, Rajgir
+                </p>
+              </div>
+
+              <div class="contact-info-block">
+                <h4>Operating Hours & Assistance</h4>
+                <p>
+                  Tourism information desks operate daily from <strong>7:00 AM to 8:00 PM</strong>.<br />
+                  Emergency traveler assistance and tourist police available around the clock across all major pilgrimage zones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions (FAQ) Accordion -->
+      <section class="section section-muted">
+        <div class="container">
+          <div class="section-header text-center reveal">
+            <span class="section-kicker">Helpful Travel Advice</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">
+              Answers to common questions about planning, transit, and traveling comfortably in Bihar.
+            </p>
+          </div>
+
+          <div class="faq-accordion reveal" style="max-width: 820px; margin-left: auto; margin-right: auto;">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button class="faq-toggle" type="button">
+                <span>Is Bihar safe and welcoming for solo and international travelers?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-content">
+                  Yes, exceptionally so. Premier hubs like Bodh Gaya, Rajgir, Nalanda, and Patna have dedicated Tourist Police, multilingual guides, and welcome tens of thousands of international visitors every year from Japan, Thailand, Sri Lanka, and Europe. Local people are renowned for their warm hospitality.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-toggle" type="button">
+                <span>How easy is it to travel between Bodh Gaya, Nalanda, and Rajgir?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-content">
+                  Travel between these three heritage centers is very convenient. Rajgir and Nalanda are just 15 kilometers apart (a 25-minute drive). Bodh Gaya to Rajgir is approximately 70 kilometers via smooth four-lane state highways, taking under 2 hours by private cab or government tourist coaches.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-toggle" type="button">
+                <span>What is the dress etiquette when visiting sacred temples and stupas?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-content">
+                  When visiting sacred Buddhist, Jain, Sikh, and Hindu sites (such as Mahabodhi Temple, Vishwa Shanti Stupa, and Takht Sri Patna Sahib), respectful attire covering shoulders and knees is recommended. Footwear must be removed before entering the inner sanctum. At Takht Sri Patna Sahib, head coverings (scarves/rumal) are mandatory and provided at the entrance.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-toggle" type="button">
+                <span>Can I book jungle jeep safaris inside Valmiki Tiger Reserve?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-body">
+                <div class="faq-body-content">
+                  Yes, morning (6:00 AM – 10:00 AM) and afternoon (2:30 PM – 5:30 PM) open-top gypsy safaris operate from Valmikinagar. In addition, motorboat tours along the scenic Gandak River and canopy eco-cottage stays managed by the forest department can be reserved through our desk.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Reusable Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <!-- Col 1: Brand & Identity -->
+          <div class="footer-brand-col">
+            <h3 class="footer-brand-title">Bihar <span>Tourism</span></h3>
+            <p class="footer-tagline">“Explore. Experience. Remember.”</p>
+            <p class="footer-about-text">
+              The official portal promoting sustainable, cultural, and heritage tourism across the sacred land of Bihar. Discover millennia of civilization, architectural wonders, and timeless spiritual wisdom.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links-list">
+              <li><a href="/index.html" class="footer-link">Home</a></li>
+              <li><a href="/destinations.html" class="footer-link">Tourist Destinations</a></li>
+              <li><a href="/experiences.html" class="footer-link">Travel Experiences</a></li>
+              <li><a href="/about.html" class="footer-link">About Bihar</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact & Trip Planner</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Key Destinations -->
+          <div>
+            <h4 class="footer-col-title">Destinations</h4>
+            <ul class="footer-links-list">
+              <li><a href="/destination.html?id=bodh-gaya" class="footer-link">Bodh Gaya</a></li>
+              <li><a href="/destination.html?id=nalanda" class="footer-link">Nalanda Mahavihara</a></li>
+              <li><a href="/destination.html?id=rajgir" class="footer-link">Rajgir Peace Pagoda</a></li>
+              <li><a href="/destination.html?id=patna" class="footer-link">Patna Heritage</a></li>
+              <li><a href="/destination.html?id=vaishali" class="footer-link">Vaishali Republic</a></li>
+              <li><a href="/destination.html?id=valmiki-tiger-reserve" class="footer-link">Valmiki Tiger Reserve</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Project & Technology Info -->
+          <div>
+            <h4 class="footer-col-title">Project & Tech</h4>
+            <p class="footer-info-text">
+              <strong>Project:</strong> Bihar Tourism Digital Portal Initiative — Showcasing the historical legacy, spiritual sanctuaries, and biodiversity of Bihar.
+            </p>
+            <p class="footer-info-text">
+              <strong>Technology:</strong> Handcrafted with semantic HTML5, modern CSS3, and Vanilla JavaScript. Fast, lightweight, accessible, zero third-party framework dependencies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">
+            &copy; 2026 Bihar Tourism. All rights reserved. Built with pride for Bihar.
+          </p>
+          <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+            <a href="/about.html" class="footer-link">Heritage Charter</a>
+            <a href="/contact.html" class="footer-link">Tourist Help Desk</a>
+            <a href="/destinations.html" class="footer-link">Site Directory</a>
+            <a href="/admin-login.html" class="footer-link" style="color: var(--color-accent-gold); font-weight: 600;">🔒 Admin Portal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Assistance Widget -->
+    <a 
+      href="https://wa.me/918298076101?text=Namaste%20Bihar%20Tourism!%20I%20would%20like%20to%20inquire%20about%20traveling%20in%20Bihar." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="whatsapp-float-btn" 
+      aria-label="Chat with Bihar Tourism on WhatsApp"
+      title="Chat with Bihar Tourism Desk on WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" fill="currentColor" class="whatsapp-float-icon">
+        <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.4 0-.6.2-.8.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2c0 1.9 1.4 3.7 1.6 3.9.2.3 2.7 4.1 6.5 5.8 3.9 1.6 3.9 1.1 4.6 1 .7 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+      </svg>
+      <span class="whatsapp-float-label">WhatsApp Desk</span>
+    </a>
+
+    <!-- Scripts: Navigation & Enquiry Form Engine -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

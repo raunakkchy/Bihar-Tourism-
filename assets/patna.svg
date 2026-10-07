@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyPatna" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#19283c"/>
+      <stop offset="45%" stop-color="#385170"/>
+      <stop offset="75%" stop-color="#93a8c1"/>
+      <stop offset="100%" stop-color="#f2d398"/>
+    </linearGradient>
+    <linearGradient id="gangaWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#284b63"/>
+      <stop offset="100%" stop-color="#122533"/>
+    </linearGradient>
+    <linearGradient id="golgharGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ecd9b8"/>
+      <stop offset="50%" stop-color="#baa07a"/>
+      <stop offset="100%" stop-color="#69563c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skyPatna)"/>
+
+  <!-- Morning Sun reflecting on Ganges River -->
+  <circle cx="580" cy="260" r="65" fill="#fff1bd"/>
+  <circle cx="580" cy="260" r="140" fill="#f8cd82" opacity="0.25"/>
+
+  <!-- River Ganges Surface in Foreground -->
+  <rect y="440" width="800" height="160" fill="url(#gangaWater)"/>
+  
+  <!-- Subtle Ganga Water Ripples -->
+  <line x1="520" y1="460" x2="640" y2="460" stroke="#fff1bd" stroke-width="2" opacity="0.6"/>
+  <line x1="480" y1="480" x2="680" y2="480" stroke="#fff1bd" stroke-width="2.5" opacity="0.5"/>
+  <line x1="420" y1="510" x2="720" y2="510" stroke="#f8cd82" stroke-width="3" opacity="0.4"/>
+  <line x1="380" y1="540" x2="740" y2="540" stroke="#baa07a" stroke-width="2.5" opacity="0.3"/>
+
+  <!-- Historic Golghar (Beehive Shaped Granary - Patna Icon) -->
+  <g transform="translate(320, 310)">
+    <!-- Base Platform -->
+    <rect x="-170" y="90" width="340" height="40" fill="#4d3b24" rx="4"/>
+    
+    <!-- Massive Beehive Dome Structure (Stupa architecture inspired) -->
+    <path d="M-140,90 C-140,-40 -80,-110 0,-110 C80,-110 140,-40 140,90 Z" fill="url(#golgharGrad)"/>
+
+    <!-- Dual Spiral Staircases winding to the summit -->
+    <path d="M-138,80 C-120,40 -60,0 0,-100" fill="none" stroke="#3d2c16" stroke-width="5"/>
+    <path d="M138,80 C120,40 60,0 0,-100" fill="none" stroke="#3d2c16" stroke-width="5"/>
+
+    <!-- Small Opening at Top / Observation Dome -->
+    <rect x="-20" y="-125" width="40" height="18" fill="#e2caa2" rx="3"/>
+    <circle cx="0" cy="-130" r="6" fill="#3d2c16"/>
+
+    <!-- Arched Ventilation Openings at Base -->
+    <path d="M-100,85 A12,12 0 0,1 -76,85 Z" fill="#22170b"/>
+    <path d="M-50,85 A12,12 0 0,1 -26,85 Z" fill="#22170b"/>
+    <path d="M-12,85 A12,12 0 0,1 12,85 Z" fill="#22170b"/>
+    <path d="M36,85 A12,12 0 0,1 60,85 Z" fill="#22170b"/>
+    <path d="M86,85 A12,12 0 0,1 110,85 Z" fill="#22170b"/>
+  </g>
+
+  <!-- Wooden Boat & Ganga Aarti Diyas on Water -->
+  <g transform="translate(620, 520)">
+    <polygon points="-40,0 40,0 25,18 -25,18" fill="#5c3818"/>
+    <line x1="0" y1="-25" x2="0" y2="0" stroke="#3a220d" stroke-width="2"/>
+    <!-- Floating leaf diya with sacred flame -->
+    <circle cx="-60" cy="20" r="5" fill="#f59e0b"/>
+    <circle cx="-60" cy="18" r="2" fill="#fffbeb"/>
+  </g>
+</svg>

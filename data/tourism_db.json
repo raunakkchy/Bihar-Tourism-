@@ -1,0 +1,146 @@
+{
+  "admins": [
+    {
+      "id": "admin-01",
+      "email": "admin@bihartourism.gov.in",
+      "name": "Bihar Tourism Help Desk Coordinator",
+      "passwordHash": "$2b$10$7MGdVkDW5O7qTV0f/Pk/e.h9OKdPS4TcAqEEGdMHl1fwhyRxoD9Ri",
+      "role": "Super Administrator",
+      "createdAt": "2026-10-06T06:00:55.383Z"
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "enq-muw9syue-d78l",
+      "name": "Pooja Sinha",
+      "email": "pooja.sinha@example.com",
+      "whatsapp": "+919876501234",
+      "interest": "Spiritual Journey",
+      "message": "We are planning a visit to Mahabodhi Temple and Rajgir.",
+      "travelDates": "",
+      "travelers": "",
+      "status": "Contacted",
+      "notes": "",
+      "createdAt": "2026-10-06T06:01:05.894Z",
+      "updatedAt": "2026-10-06T06:13:14.485Z"
+    },
+    {
+      "id": "enq-1001",
+      "name": "Ananya Sharma",
+      "email": "ananya.sharma@example.com",
+      "whatsapp": "+91 98765 43210",
+      "interest": "Spiritual Journey",
+      "message": "Seeking a 4-day guided pilgrimage itinerary covering Mahabodhi Temple in Bodh Gaya and the monasteries in Rajgir for a family group of 4.",
+      "travelDates": "November 15–19, 2026",
+      "travelers": "4 Adults",
+      "status": "New",
+      "notes": "Inquired about Hindi & English speaking licensed guide.",
+      "createdAt": "2026-10-06T03:00:55.384Z",
+      "updatedAt": "2026-10-06T03:00:55.384Z"
+    },
+    {
+      "id": "enq-1002",
+      "name": "Rajesh Kumar Verma",
+      "email": "rajesh.verma@delhitech.in",
+      "whatsapp": "+91 94312 87654",
+      "interest": "Heritage",
+      "message": "Planning an archaeological documentation tour to Nalanda University ruins, Xuanzang Memorial, and Sasaram tomb of Sher Shah Suri.",
+      "travelDates": "December 2–6, 2026",
+      "travelers": "2 Adults",
+      "status": "In Progress",
+      "notes": "Sent preliminary brochure via email, pending WhatsApp follow up.",
+      "createdAt": "2026-10-05T06:00:55.384Z",
+      "updatedAt": "2026-10-05T18:00:55.384Z"
+    },
+    {
+      "id": "enq-1003",
+      "name": "Dr. Siddharth Sen",
+      "email": "siddharth.sen@naturewalks.org",
+      "whatsapp": "+91 98301 23456",
+      "interest": "Nature Escape",
+      "message": "Interested in booking forest canopy eco-lodges and jeep safari inside Valmiki Tiger Reserve for a wildlife photography group.",
+      "travelDates": "January 10–14, 2027",
+      "travelers": "6 Photographers",
+      "status": "Contacted",
+      "notes": "Contacted via WhatsApp. Forest department safari permit details shared.",
+      "createdAt": "2026-10-04T06:00:55.384Z",
+      "updatedAt": "2026-10-05T10:00:55.384Z"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "bodh-gaya",
+      "name": "Bodh Gaya",
+      "category": "Spiritual",
+      "shortDescription": "The supreme spiritual cradle where Prince Siddhartha attained Enlightenment beneath the sacred Bodhi Tree in 528 BCE. Home to the UNESCO World Heritage Mahabodhi Temple.",
+      "image": "https://imgs.search.brave.com/ypwXFb3B3bOAw0SAbOuNKhvTSgNBwqh7yRLPvT2lafY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9ib2RoLWdh/eWEtaW5kaWEtYXBy/aWwtMjgtMjYwbnct/NjI1MDA5MTgxLmpw/Zw",
+      "location": "Gaya District, South Bihar",
+      "overview": "The supreme spiritual cradle where Prince Siddhartha attained Enlightenment beneath the sacred Bodhi Tree in 528 BCE. Home to the UNESCO World Heritage Mahabodhi Temple.",
+      "bestTime": "October to March",
+      "featured": true,
+      "slug": "bodh-gaya",
+      "fullDescription": "The supreme spiritual cradle where Prince Siddhartha attained Enlightenment beneath the sacred Bodhi Tree in 528 BCE. Home to the UNESCO World Heritage Mahabodhi Temple.",
+      "gallery": [
+        "/uploads/bodhgaya-gallery.jpg"
+      ],
+      "highlights": [],
+      "published": true,
+      "updatedAt": "2026-10-06T07:18:41.656Z"
+    },
+    {
+      "id": "nalanda",
+      "name": "Nalanda",
+      "category": "History",
+      "shortDescription": "The ancient world’s legendary residential university that flourished for 700 years. Vast red brick ruins, monumental votive stupas, and lecture halls.",
+      "image": "/assets/nalanda.svg",
+      "location": "Nalanda District, Central Bihar",
+      "overview": "Ancient seat of international higher learning where 10,000 scholars and 2,000 acharyas debated philosophy, astronomy, and science. UNESCO World Heritage Site.",
+      "bestTime": "October to March",
+      "featured": true
+    },
+    {
+      "id": "rajgir",
+      "name": "Rajgir",
+      "category": "History / Spiritual",
+      "shortDescription": "Ancient Magadhan capital cradled in seven hills. Site of Lord Buddha’s Vulture Peak teachings, sacred hot springs, and the dazzling white Vishwa Shanti Stupa.",
+      "image": "/assets/rajgir.svg",
+      "location": "Nalanda District, Central Bihar",
+      "overview": "First imperial capital of Magadha. Notable for the aerial chairlift ropeway, Peace Pagoda, Ghora Katora Lake, and Gridhrakuta.",
+      "bestTime": "October to March",
+      "featured": true
+    },
+    {
+      "id": "patna",
+      "name": "Patna",
+      "category": "History",
+      "shortDescription": "Historic Pataliputra, imperial capital of Mauryan & Gupta empires along the sacred Ganges. Home to the modern Bihar Museum and Takht Sri Patna Sahib.",
+      "image": "/assets/patna.svg",
+      "location": "Patna District, Central Bihar",
+      "overview": "Millennia-old capital featuring the world-class Bihar Museum, Golghar granary, sacred Takht Sri Patna Sahib, and evening Ganga Aarti.",
+      "bestTime": "October to March",
+      "featured": true
+    },
+    {
+      "id": "vaishali",
+      "name": "Vaishali",
+      "category": "History / Spiritual",
+      "shortDescription": "The world’s first recorded democratic republic. Sacred birthplace of Lord Mahavira and location of Emperor Ashoka’s polished sandstone lion pillar.",
+      "image": "/assets/vaishali.svg",
+      "location": "Vaishali District, North Bihar",
+      "overview": "Capital of the ancient Licchavi republic, site of Buddha’s Last Sermon, Relic Stupa, and Ashokan Lion Pillar.",
+      "bestTime": "October to March",
+      "featured": true
+    },
+    {
+      "id": "valmiki",
+      "name": "Valmiki Tiger Reserve",
+      "category": "Nature",
+      "shortDescription": "Lush Himalayan foothills and moist Sal forests along the Gandak River. Bihar’s premier eco-tourism sanctuary home to Bengal tigers, rhinos, and hornbills.",
+      "image": "/assets/valmiki.svg",
+      "location": "West Champaran District, North Bihar",
+      "overview": "Over 898 sq km of pristine wilderness in the Terai region. Jungle jeep safaris, river rafting, and canopy lodges.",
+      "bestTime": "November to April",
+      "featured": true
+    }
+  ]
+}

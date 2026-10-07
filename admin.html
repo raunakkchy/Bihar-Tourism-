@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard — Bihar Tourism Portal</title>
+    <meta name="description" content="Administrative control center for managing traveler inquiries, WhatsApp communication, and tourism destinations catalog." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <div class="admin-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <a href="/admin.html" class="admin-brand">
+            <svg class="admin-brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M8.2 23.8L23.8 8.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3.5" fill="currentColor"/>
+            </svg>
+            <div>
+              <div class="admin-brand-title">Bihar <span>Tourism</span></div>
+              <span class="admin-brand-portal">Admin Control Center</span>
+            </div>
+          </a>
+          <button type="button" id="btn-close-sidebar" class="admin-sidebar-close-btn" aria-label="Close sidebar menu">&times;</button>
+        </div>
+
+        <nav class="admin-sidebar-nav" aria-label="Admin Navigation">
+          <button type="button" class="admin-nav-item active" data-tab="tab-enquiries">
+            <svg class="admin-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>Enquiries & Leads</span>
+          </button>
+
+          <button type="button" class="admin-nav-item" data-tab="tab-whatsapp">
+            <svg class="admin-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            <span>WhatsApp Quick Desk</span>
+          </button>
+
+          <button type="button" class="admin-nav-item" data-tab="tab-destinations">
+            <svg class="admin-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Destinations Catalog</span>
+          </button>
+
+          <button type="button" class="admin-nav-item" data-tab="tab-settings">
+            <svg class="admin-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Desk Info & System</span>
+          </button>
+
+          <div style="margin-top: 1.5rem; padding: 0 0.5rem;">
+            <a href="/index.html" target="_blank" class="btn btn-outline" style="width: 100%; font-size: 0.75rem; padding: 0.5rem; border-color: rgba(255,255,255,0.2); color: #ffffff;">
+              ↗ View Public Portal
+            </a>
+          </div>
+        </nav>
+
+        <div class="admin-sidebar-footer">
+          <div class="admin-user-info">
+            <div class="admin-avatar" id="admin-avatar-initials">BT</div>
+            <div class="admin-user-details">
+              <div class="admin-user-name" id="admin-user-name">Coordinator</div>
+              <div class="admin-user-role" id="admin-user-email">admin@bihartourism.gov.in</div>
+            </div>
+          </div>
+          <button type="button" id="btn-logout" class="btn-admin-logout">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- Mobile Backdrop Overlay -->
+      <div id="sidebar-overlay" class="admin-sidebar-overlay" aria-hidden="true"></div>
+
+      <!-- Main Admin Content Area -->
+      <main class="admin-main">
+        <!-- Top Navigation Bar -->
+        <header class="admin-topbar">
+          <button type="button" id="btn-toggle-sidebar" class="admin-mobile-menu-btn" aria-label="Toggle navigation menu">
+            <svg style="width: 22px; height: 22px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <div class="admin-topbar-title">
+            <h1 id="page-heading">Enquiry Management</h1>
+            <p id="page-subheading">Track, respond via WhatsApp, and manage incoming traveler inquiries.</p>
+          </div>
+          <div class="admin-topbar-actions">
+            <button type="button" id="btn-refresh" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.8125rem;">
+              ↻ Refresh Data
+            </button>
+            <a href="/index.html" class="btn btn-primary" style="padding: 0.5rem 0.85rem; font-size: 0.8125rem;">
+              Public Site &rarr;
+            </a>
+          </div>
+        </header>
+
+        <div class="admin-content">
+          <!-- TAB 1: ENQUIRIES & LEADS -->
+          <section id="tab-enquiries" class="tab-pane active">
+            <!-- Metrics KPI Grid -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>Total Enquiries</h3>
+                  <div class="stat-card-value" id="stat-total">0</div>
+                </div>
+                <div class="stat-card-icon icon-total">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>New / Unread</h3>
+                  <div class="stat-card-value" id="stat-new" style="color: #c84b31;">0</div>
+                </div>
+                <div class="stat-card-icon icon-new">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>In Progress</h3>
+                  <div class="stat-card-value" id="stat-inprogress" style="color: #d97706;">0</div>
+                </div>
+                <div class="stat-card-icon icon-inprogress">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>Contacted (WA / Mail)</h3>
+                  <div class="stat-card-value" id="stat-contacted" style="color: #0284c7;">0</div>
+                </div>
+                <div class="stat-card-icon icon-contacted">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>Completed / Booked</h3>
+                  <div class="stat-card-value" id="stat-completed" style="color: #16a34a;">0</div>
+                </div>
+                <div class="stat-card-icon icon-completed">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card-info">
+                  <h3>Destinations</h3>
+                  <div class="stat-card-value" id="stat-destinations" style="color: #4f46e5;">0</div>
+                </div>
+                <div class="stat-card-icon" style="background: #eef2ff; color: #4f46e5;">
+                  <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filters & Table Panel -->
+            <div class="table-panel">
+              <div class="table-toolbar">
+                <div class="search-filter-group">
+                  <input 
+                    type="text" 
+                    id="enquiry-search" 
+                    class="admin-search-input" 
+                    placeholder="Search name, phone, email, query..." 
+                  />
+
+                  <select id="enquiry-interest-filter" class="admin-select">
+                    <option value="all">All Travel Interests</option>
+                    <option value="Spiritual Journey">Spiritual Journey</option>
+                    <option value="Heritage">Heritage & History</option>
+                    <option value="Nature Escape">Nature & Wildlife</option>
+                    <option value="Local Flavours">Local Flavours / Culinary</option>
+                    <option value="Complete Bihar Trip">Complete Bihar Trip</option>
+                  </select>
+
+                  <div class="status-filter-pills">
+                    <button type="button" class="status-pill-btn active" data-status="all">All</button>
+                    <button type="button" class="status-pill-btn" data-status="New">New</button>
+                    <button type="button" class="status-pill-btn" data-status="In Progress">In Progress</button>
+                    <button type="button" class="status-pill-btn" data-status="Contacted">Contacted</button>
+                    <button type="button" class="status-pill-btn" data-status="Completed">Completed</button>
+                  </div>
+                </div>
+
+                <div class="table-action-btns">
+                  <button type="button" id="btn-export-csv" class="btn btn-secondary" style="font-size: 0.8125rem;">
+                    📥 Export CSV
+                  </button>
+                  <button type="button" id="btn-seed-data" class="btn btn-outline" style="font-size: 0.75rem; border-color: #cbd5e1; color: #475569;">
+                    Load Samples
+                  </button>
+                </div>
+              </div>
+
+              <!-- Enquiries Data Table -->
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Ref / Date</th>
+                      <th>Traveler Details</th>
+                      <th>WhatsApp Contact</th>
+                      <th>Interest Area</th>
+                      <th>Status & Notes</th>
+                      <th style="text-align: right;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="enquiries-tbody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB 2: WHATSAPP QUICK DESK -->
+          <section id="tab-whatsapp" class="tab-pane" style="display: none;">
+            <div class="table-panel" style="max-width: 720px; margin: 0 auto; padding: 2rem;">
+              <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: #16a34a;">💬</span> WhatsApp Direct Message Sender
+              </h2>
+              <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">
+                Send verified official BSTDC tourist assistance messages directly to any traveler’s WhatsApp number without saving them in phone contacts.
+              </p>
+
+              <form id="quick-wa-form">
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <label class="form-label" for="wa-phone" style="font-weight: 600;">Traveler WhatsApp Mobile (10-Digit Indian)</label>
+                  <input type="tel" id="wa-phone" class="form-control" placeholder="9876543210" required />
+                  <small style="color: #64748b; font-size: 0.75rem;">Country code +91 will be automatically prefixed.</small>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <label class="form-label" for="wa-template" style="font-weight: 600;">Select Quick Response Template</label>
+                  <select id="wa-template" class="admin-select" style="width: 100%;">
+                    <option value="welcome">Welcome & Inquiry Acknowledgment</option>
+                    <option value="itinerary">Itinerary Proposal Ready</option>
+                    <option value="buddhist">Buddhist Circuit Package Info</option>
+                    <option value="valmiki">Valmiki Tiger Reserve Eco-Safari</option>
+                    <option value="cultural">Art & Cultural Trail Details</option>
+                    <option value="custom">Custom Message</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                  <label class="form-label" for="wa-message" style="font-weight: 600;">Message Content</label>
+                  <textarea id="wa-message" class="form-control" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 0.875rem; font-size: 0.9375rem;">
+                  <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 32 32">
+                    <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.4 0-.6.2-.8.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2c0 1.9 1.4 3.7 1.6 3.9.2.3 2.7 4.1 6.5 5.8 3.9 1.6 3.9 1.1 4.6 1 .7 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+                  </svg>
+                  Open WhatsApp Chat With Traveler &rarr;
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- TAB 3: DESTINATIONS CATALOG -->
+          <section id="tab-destinations" class="tab-pane" style="display: none;">
+            <div class="table-panel">
+              <div class="table-toolbar">
+                <div>
+                  <h3 style="margin: 0; font-size: 1.125rem;">Destinations Catalog Management (<span id="stat-dest-count">0</span> Total)</h3>
+                  <p style="margin: 0; font-size: 0.8125rem; color: #64748b;">Add, update, or edit featured tourism destinations across Bihar.</p>
+                </div>
+                <button type="button" id="btn-add-dest-modal" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+                  + Add New Destination
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Photo</th>
+                      <th>Destination Name</th>
+                      <th>Category</th>
+                      <th>District / Location</th>
+                      <th>Status</th>
+                      <th style="text-align: right;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="destinations-tbody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB 4: SETTINGS & DESK INFO -->
+          <section id="tab-settings" class="tab-pane" style="display: none;">
+            <div class="table-panel" style="max-width: 800px; margin: 0 auto; padding: 2rem;">
+              <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Bihar Tourism Help Desk Configuration</h2>
+              <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.5rem;">Current active endpoints, storage configuration, and official communication channels.</p>
+
+              <div style="display: grid; gap: 1rem;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                  <strong style="font-size: 0.875rem; color: #0f172a;">Official WhatsApp Desk Number:</strong>
+                  <div style="font-size: 1.125rem; color: #16a34a; font-weight: 700; margin-top: 0.25rem;">+91 82980 76101</div>
+                  <small style="color: #64748b;">Used for customer click-to-chat referrals on the public website.</small>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                  <strong style="font-size: 0.875rem; color: #0f172a;">Toll-Free Tourist Helpline:</strong>
+                  <div style="font-size: 1rem; color: #0f172a; font-weight: 600; margin-top: 0.25rem;">1800-3456-789 (24x7)</div>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                  <strong style="font-size: 0.875rem; color: #0f172a;">Official Desk Email:</strong>
+                  <div style="font-size: 1rem; color: #0f172a; font-weight: 600; margin-top: 0.25rem;">helpdesk@bihartourism.gov.in / tours@bihartourism.gov.in</div>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                  <strong style="font-size: 0.875rem; color: #0f172a;">Database Persistence Engine:</strong>
+                  <div style="font-size: 0.9375rem; color: #0f172a; font-weight: 600; margin-top: 0.25rem;">
+                    Active Data Store: Local JSON Database Store (with MongoDB/Mongoose Atlas capability)
+                  </div>
+                  <small style="color: #64748b;">Stored safely at <code>/data/tourism_db.json</code>. Changes persist across application restarts.</small>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- MODAL: View / Edit Enquiry & Notes -->
+    <div id="modal-enquiry-detail" class="admin-modal-backdrop" role="dialog" aria-modal="true">
+      <div class="admin-modal-card">
+        <div class="admin-modal-header">
+          <h3>Enquiry Details & Coordinator Notes</h3>
+          <button type="button" class="modal-close-btn" id="btn-close-enquiry-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+        </div>
+        <div class="admin-modal-body">
+          <div style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <div style="font-size: 1.125rem; font-weight: 700; color: #0f172a;" id="modal-traveler-name">—</div>
+              <div style="font-size: 0.875rem; color: #64748b;" id="modal-traveler-email">—</div>
+              <div style="font-size: 0.875rem; color: #16a34a; font-weight: 600;" id="modal-traveler-phone">—</div>
+            </div>
+            <div id="modal-status-badge"></div>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.875rem; margin-bottom: 1.25rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.8125rem;">
+              <div><strong>Travel Interest:</strong> <span id="modal-interest">—</span></div>
+              <div><strong>Travel Dates:</strong> <span id="modal-dates">—</span></div>
+              <div><strong>Travelers:</strong> <span id="modal-travelers">—</span></div>
+              <div><strong>Received:</strong> <span id="modal-created">—</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <strong style="display: block; font-size: 0.875rem; margin-bottom: 0.35rem; color: #0f172a;">Traveler's Message / Request:</strong>
+            <p id="modal-message" style="margin: 0; font-size: 0.9375rem; line-height: 1.6; background: #fff8f5; border-left: 3px solid #c84b31; padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; color: #334155;">—</p>
+          </div>
+
+          <!-- Status & Internal Coordinator Notes -->
+          <div style="margin-bottom: 1rem;">
+            <label class="form-label" for="modal-edit-status" style="font-weight: 600; font-size: 0.875rem;">Update Lead Status:</label>
+            <select id="modal-edit-status" class="admin-select" style="width: 100%; margin-bottom: 1rem;">
+              <option value="New">New</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Contacted">Contacted</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="form-label" for="modal-edit-notes" style="font-weight: 600; font-size: 0.875rem;">Internal Coordinator Remarks & Progress Notes:</label>
+            <textarea id="modal-edit-notes" class="form-control" rows="3" placeholder="e.g. Sent 4-day itinerary via WhatsApp. Traveler asked for vehicle with driver. Follow-up scheduled for Friday."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <button type="button" id="btn-modal-delete-enquiry" class="btn btn-outline" style="color: #dc2626; border-color: #fecaca; background: #fff5f5; font-size: 0.8125rem;">
+            🗑️ Delete Enquiry
+          </button>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <a id="modal-wa-btn" href="#" target="_blank" class="btn btn-whatsapp" style="font-size: 0.8125rem;">
+              Chat on WhatsApp
+            </a>
+            <button type="button" id="btn-save-enquiry-notes" class="btn btn-primary" style="font-size: 0.8125rem;">
+              Save Status & Notes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Add/Edit Destination (Full photo upload from phone/computer + slug validation) -->
+    <div id="modal-dest-form" class="admin-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-dest-title">
+      <div class="admin-modal-card" style="max-width: 680px;">
+        <div class="admin-modal-header">
+          <h3 id="modal-dest-title">Add Destination</h3>
+          <button type="button" class="modal-close-btn" id="btn-close-dest-modal" aria-label="Close modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b;">&times;</button>
+        </div>
+        <form id="destinationForm" name="destinationForm">
+          <div class="admin-modal-body">
+            <input type="hidden" id="dest-id" />
+            
+            <div id="dest-error-box" class="admin-alert admin-alert-error" style="display: none; margin-bottom: 1rem; border-left: 4px solid #b91c1c; font-weight: 500;"></div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="dest-name" style="font-weight: 600;">Destination Name *</label>
+                <input type="text" id="dest-name" class="form-control" placeholder="e.g. Rajgir, Bodh Gaya" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="dest-slug" style="font-weight: 600;">Unique Slug (URL) *</label>
+                <input type="text" id="dest-slug" class="form-control" placeholder="e.g. rajgir" required />
+                <small style="color: #64748b; font-size: 0.72rem;">Used in web address: <code>/destination.html?id=slug</code></small>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="dest-category" style="font-weight: 600;">Category *</label>
+                <select id="dest-category" class="form-control" required>
+                  <option value="Spiritual">Spiritual</option>
+                  <option value="History">History</option>
+                  <option value="Nature">Nature</option>
+                  <option value="History / Spiritual">History / Spiritual</option>
+                  <option value="Culture & Arts">Culture & Arts</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="dest-location" style="font-weight: 600;">District / Location *</label>
+                <input type="text" id="dest-location" class="form-control" placeholder="e.g. Nalanda District, Central Bihar" required />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+              <label class="form-label" for="dest-short-desc" style="font-weight: 600;">Short Summary Description *</label>
+              <textarea id="dest-short-desc" class="form-control" rows="2" placeholder="Brief 1-2 sentence description shown in preview cards..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+              <label class="form-label" for="dest-overview" style="font-weight: 600;">Full Description & Overview *</label>
+              <textarea id="dest-overview" class="form-control" rows="3" placeholder="Detailed historical, spiritual, or ecological overview for the destination detail page..." required></textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="dest-best-time" style="font-weight: 600;">Best Time to Visit</label>
+                <input type="text" id="dest-best-time" class="form-control" placeholder="October to March" value="October to March" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" style="font-weight: 600;">Publication Status</label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; font-size: 0.875rem; cursor: pointer;">
+                  <input type="checkbox" id="dest-published" checked style="width: 18px; height: 18px; accent-color: var(--admin-primary);" />
+                  <span style="font-weight: 500;">Publish immediately on public website</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+              <label class="form-label" for="dest-highlights" style="font-weight: 600;">Key Highlights (1 per line)</label>
+              <textarea id="dest-highlights" class="form-control" rows="2" placeholder="e.g.&#10;Mahabodhi Temple Complex&#10;Sacred Bodhi Tree&#10;80-Foot Great Buddha Statue"></textarea>
+            </div>
+
+            <!-- MAIN PHOTOGRAPH UPLOAD (PHONE GALLERY / COMPUTER) -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+              <label class="form-label" style="font-weight: 600;">Main Destination Photograph</label>
+              <p style="font-size: 0.78rem; color: #64748b; margin: 0 0 0.5rem 0;">
+                Select real photographs directly from your phone gallery, camera, Files app, or computer (.jpg, .jpeg, .png, .webp).
+              </p>
+
+              <div class="image-upload-box" id="dest-upload-dropzone">
+                <input type="file" id="dest-file-input" accept="image/jpeg,image/png,image/webp" style="display: none;" />
+                
+                <div class="image-upload-btn-group">
+                  <button type="button" class="upload-device-btn" id="btn-browse-file">
+                    📸 Choose Image / Upload from Device
+                  </button>
+                  <span style="font-size: 0.75rem; color: #94a3b8;">or paste image URL below</span>
+                </div>
+
+                <input 
+                  type="text" 
+                  id="dest-image" 
+                  class="form-control" 
+                  placeholder="/assets/bodhgaya.svg or https://images.unsplash.com/..." 
+                  style="font-size: 0.8125rem;" 
+                />
+
+                <!-- Image Live Preview Container -->
+                <div id="image-preview-wrapper" style="display: none; margin-top: 0.75rem;">
+                  <div class="image-preview-card">
+                    <img id="image-preview-img" src="" alt="Selected destination preview" class="image-preview-thumb" />
+                    <div class="image-preview-info" id="image-preview-filename">—</div>
+                    <div class="image-preview-actions">
+                      <button type="button" class="btn btn-secondary" id="btn-change-image" style="flex: 1; padding: 0.3rem 0.5rem; font-size: 0.75rem;">
+                        Replace Photo
+                      </button>
+                      <button type="button" class="btn btn-outline" id="btn-remove-image" style="padding: 0.3rem 0.5rem; font-size: 0.75rem; color: #dc2626;">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OPTIONAL GALLERY IMAGES -->
+            <div class="form-group" style="margin-top: 1.25rem; margin-bottom: 1rem;">
+              <label class="form-label" style="font-weight: 600;">Additional Gallery Photos (Optional)</label>
+              <input type="file" id="dest-gallery-input" multiple accept="image/jpeg,image/png,image/webp" style="display: none;" />
+              <button type="button" class="btn btn-secondary" id="btn-add-gallery" style="font-size: 0.8125rem; padding: 0.45rem 0.85rem;">
+                + Add Photos to Gallery
+              </button>
+              <div id="gallery-preview-container" class="gallery-preview-grid"></div>
+            </div>
+          </div>
+
+          <!-- STICKY ACTION BUTTONS: ALWAYS VISIBLE ON DESKTOP & MOBILE -->
+          <div class="form-actions admin-modal-footer">
+            <button type="button" id="cancelDestinationBtn" class="btn btn-secondary" style="min-width: 100px;">
+              Cancel
+            </button>
+            <button type="submit" id="saveDestinationBtn" class="btn btn-primary" style="min-width: 160px; font-weight: 700;">
+              Save Destination
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="admin-toast-container" aria-live="polite"></div>
+
+    <!-- JavaScript Application for Admin Portal -->
+    <script>
+      let currentEnquiries = [];
+      let allEnquiriesCache = [];
+      let currentDestinations = [];
+      let activeEnquiry = null;
+      let currentGalleryList = [];
+      let pendingUploadedFile = null;
+      let destinationsLoaded = false;
+      let enquiriesLoaded = false;
+      let inFlightEnquiries = false;
+      let inFlightDestinations = false;
+
+      // Token and Auth Helpers
+      function getAuthToken() {
+        return localStorage.getItem('admin_token') || sessionStorage.getItem('admin_token') || '';
+      }
+
+      function clearAuthToken() {
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_user');
+        sessionStorage.removeItem('admin_token');
+        sessionStorage.removeItem('admin_user');
+      }
+
+      // Optimized authFetch with timeout and slow-server indicator
+      async function authFetch(url, options = {}) {
+        const token = getAuthToken();
+        const headers = Object.assign({}, options.headers || {});
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`;
+        }
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 20000); // 20s timeout
+        const slowNoticeId = setTimeout(() => {
+          showToast('Server is taking longer than usual. Please wait...', 'info');
+        }, 4000);
+
+        try {
+          const res = await fetch(url, {
+            ...options,
+            headers,
+            credentials: 'include',
+            signal: controller.signal
+          });
+          clearTimeout(slowNoticeId);
+          clearTimeout(timeoutId);
+          return res;
+        } catch (err) {
+          clearTimeout(slowNoticeId);
+          clearTimeout(timeoutId);
+          if (err.name === 'AbortError') {
+            throw new Error('Request timed out. Please try again.');
+          }
+          throw err;
+        }
+      }
+
+      // Toast notification helper
+      function showToast(message, type = 'success') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `admin-toast ${type}`;
+        toast.textContent = message;
+        container.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 3200);
+      }
+
+      // Check Authentication (Robust session preservation)
+      async function checkAuth() {
+        const token = getAuthToken();
+        if (!token) {
+          window.location.href = '/admin-login.html';
+          return;
+        }
+
+        try {
+          const res = await authFetch('/api/admin/me');
+          if (res.status === 401) {
+            clearAuthToken();
+            window.location.href = '/admin-login.html';
+            return;
+          }
+
+          const data = await res.json();
+          if (data && data.success && data.admin) {
+            document.getElementById('admin-user-name').textContent = data.admin.name || 'Coordinator';
+            document.getElementById('admin-user-email').textContent = data.admin.email || '';
+            if (data.admin.name) {
+              const initials = data.admin.name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+              document.getElementById('admin-avatar-initials').textContent = initials;
+            }
+          }
+        } catch (err) {
+          // In case of transient network issue, keep user logged in using cached credentials
+          const cached = localStorage.getItem('admin_user') || sessionStorage.getItem('admin_user');
+          if (cached) {
+            try {
+              const u = JSON.parse(cached);
+              document.getElementById('admin-user-name').textContent = u.name || 'Coordinator';
+              document.getElementById('admin-user-email').textContent = u.email || '';
+            } catch (e) {}
+          }
+        }
+      }
+
+      // Load Statistics
+      async function loadStats() {
+        try {
+          const res = await authFetch('/api/admin/stats');
+          const data = await res.json();
+          if (data.success && data.stats) {
+            document.getElementById('stat-total').textContent = data.stats.total;
+            document.getElementById('stat-new').textContent = data.stats.new;
+            document.getElementById('stat-inprogress').textContent = data.stats.inProgress;
+            document.getElementById('stat-contacted').textContent = data.stats.contacted;
+            document.getElementById('stat-completed').textContent = data.stats.completed;
+            const destStatEl = document.getElementById('stat-destinations');
+            if (destStatEl && data.stats.destinations !== undefined) {
+              destStatEl.textContent = data.stats.destinations;
+            }
+            const destCountBadge = document.getElementById('stat-dest-count');
+            if (destCountBadge && data.stats.destinations !== undefined) {
+              destCountBadge.textContent = data.stats.destinations;
+            }
+          }
+        } catch (err) {
+          console.error('Error fetching stats:', err);
+        }
+      }
+
+      // Load Enquiries (Cached for high-speed responsiveness)
+      async function loadEnquiries(forceRefresh = false) {
+        if (inFlightEnquiries) return;
+        if (enquiriesLoaded && !forceRefresh) {
+          applyEnquiriesFilter();
+          return;
+        }
+
+        inFlightEnquiries = true;
+        const tbody = document.getElementById('enquiries-tbody');
+        if (!allEnquiriesCache.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #64748b; padding: 2rem;">Loading enquiries...</td></tr>`;
+        }
+
+        try {
+          const res = await authFetch('/api/admin/enquiries');
+          if (res.status === 401) {
+            window.location.href = '/admin-login.html';
+            return;
+          }
+          const data = await res.json();
+
+          if (!data.success) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #dc2626; padding: 2rem;">Error loading enquiries.</td></tr>`;
+            return;
+          }
+
+          allEnquiriesCache = data.enquiries || [];
+          enquiriesLoaded = true;
+          applyEnquiriesFilter();
+        } catch (err) {
+          if (!allEnquiriesCache.length) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #dc2626; padding: 2rem;">Connection failed.</td></tr>`;
+          }
+        } finally {
+          inFlightEnquiries = false;
+        }
+      }
+
+      // Fast Client-Side Search & Filter (0ms latency, zero flicker)
+      function applyEnquiriesFilter() {
+        const statusPill = document.querySelector('.status-pill-btn.active');
+        const status = statusPill ? statusPill.getAttribute('data-status') : 'all';
+        const interest = document.getElementById('enquiry-interest-filter').value;
+        const search = document.getElementById('enquiry-search').value.trim().toLowerCase();
+
+        let filtered = allEnquiriesCache;
+
+        if (status && status !== 'all') {
+          filtered = filtered.filter(e => e.status && e.status.toLowerCase() === status.toLowerCase());
+        }
+
+        if (interest && interest !== 'all') {
+          filtered = filtered.filter(e => e.interest && e.interest.toLowerCase() === interest.toLowerCase());
+        }
+
+        if (search) {
+          filtered = filtered.filter(e =>
+            (e.name && e.name.toLowerCase().includes(search)) ||
+            (e.email && e.email.toLowerCase().includes(search)) ||
+            (e.whatsapp && e.whatsapp.includes(search)) ||
+            (e.message && e.message.toLowerCase().includes(search)) ||
+            (e.notes && e.notes.toLowerCase().includes(search)) ||
+            (e.id && e.id.toLowerCase().includes(search))
+          );
+        }
+
+        currentEnquiries = filtered;
+        renderEnquiriesTable(currentEnquiries);
+      }
+
+      // Render Enquiries Table with Instant WhatsApp and Delete Feedback
+      function renderEnquiriesTable(enquiries) {
+        const tbody = document.getElementById('enquiries-tbody');
+
+        if (!enquiries.length) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 3rem 1.5rem; color: #64748b;">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔍</div>
+                <strong style="font-size: 1rem; color: #0f172a; display: block; margin-bottom: 0.25rem;">No enquiries match current filters</strong>
+                <p style="margin: 0; font-size: 0.875rem;">Try adjusting your search criteria or load sample enquiries.</p>
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        tbody.innerHTML = enquiries.map(enq => {
+          const cleanPhone = enq.whatsapp.replace(/[^0-9]/g, '');
+          const waPreFilled = encodeURIComponent(`Namaste ${enq.name}! This is the Bihar Tourism Desk following up on your travel enquiry for "${enq.interest}". We would love to share customized itinerary options with you.`);
+          const waUrl = `https://wa.me/${cleanPhone}?text=${waPreFilled}`;
+
+          const dateStr = new Date(enq.createdAt).toLocaleDateString('en-IN', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+          });
+
+          return `
+            <tr data-enquiry-id="${enq.id}">
+              <td>
+                <div style="font-weight: 600; color: #0f172a; font-family: monospace;">#${enq.id}</div>
+                <div style="font-size: 0.75rem; color: #64748b;">${dateStr}</div>
+              </td>
+              <td>
+                <div style="font-weight: 600; color: #0f172a;">${escapeHtml(enq.name)}</div>
+                <div style="font-size: 0.8125rem; color: #64748b;">${escapeHtml(enq.email)}</div>
+              </td>
+              <td>
+                <button type="button" class="btn-wa-direct" data-wa-url="${waUrl}" style="background: none; border: none; cursor: pointer; padding: 0; font-weight: 600; color: #16a34a; display: inline-flex; align-items: center; gap: 0.25rem;">
+                  <span>💬 ${enq.whatsapp}</span>
+                </button>
+              </td>
+              <td>
+                <span style="display: inline-block; padding: 0.2rem 0.5rem; background: #fdf2f0; color: #c84b31; border: 1px solid #fee2e2; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
+                  ${escapeHtml(enq.interest)}
+                </span>
+              </td>
+              <td>
+                <select class="admin-select inline-status-select" data-id="${enq.id}" style="padding: 0.3rem 0.5rem; font-size: 0.75rem; font-weight: 600;">
+                  <option value="New" ${enq.status === 'New' ? 'selected' : ''}>New</option>
+                  <option value="In Progress" ${enq.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                  <option value="Contacted" ${enq.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+                  <option value="Completed" ${enq.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                  <option value="Cancelled" ${enq.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                </select>
+                ${enq.notes ? `<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.25rem; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHtml(enq.notes)}">📝 ${escapeHtml(enq.notes)}</div>` : ''}
+              </td>
+              <td style="text-align: right;">
+                <div class="dest-actions-wrap">
+                  <button type="button" class="btn-action-dest btn-action-preview btn-open-wa" data-wa-url="${waUrl}" title="Open WhatsApp Chat Directly">
+                    💬 WhatsApp
+                  </button>
+                  <button type="button" class="btn-action-dest btn-action-edit btn-view-enquiry" data-id="${enq._id || enq.id}" title="View Details & Notes">
+                    👁️ View
+                  </button>
+                  <button type="button" class="btn-action-dest btn-action-delete btn-delete-enquiry" data-id="${enq._id || enq.id}" title="Delete Enquiry Permanently">
+                    🗑️ Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        // Wire WhatsApp Buttons with Instant Feedback
+        tbody.querySelectorAll('.btn-open-wa, .btn-wa-direct').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const waUrl = btn.getAttribute('data-wa-url');
+            const originalText = btn.innerHTML;
+            if (btn.classList.contains('btn-open-wa')) {
+              btn.textContent = 'Opening WhatsApp...';
+              btn.disabled = true;
+              setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+              }, 1200);
+            }
+            window.open(waUrl, '_blank');
+          });
+        });
+
+        // Attach event listeners for status dropdown
+        tbody.querySelectorAll('.inline-status-select').forEach(select => {
+          select.addEventListener('change', async (e) => {
+            const id = e.target.getAttribute('data-id');
+            const newStatus = e.target.value;
+            await updateEnquiryStatus(id, newStatus, select);
+          });
+        });
+
+        tbody.querySelectorAll('.btn-view-enquiry').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            btn.textContent = 'Loading...';
+            setTimeout(() => { btn.textContent = '👁️ View'; }, 300);
+            openEnquiryModal(id);
+          });
+        });
+
+        tbody.querySelectorAll('.btn-delete-enquiry').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            confirmDeleteEnquiry(id, btn);
+          });
+        });
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      // Update Enquiry Status Inline with Targeted UI Update
+      async function updateEnquiryStatus(id, newStatus, selectEl = null) {
+        if (selectEl) selectEl.disabled = true;
+
+        try {
+          const res = await authFetch(`/api/admin/enquiries/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+          });
+          const data = await res.json();
+          if (selectEl) selectEl.disabled = false;
+
+          if (data.success) {
+            showToast(`Status updated to "${newStatus}"`);
+            // Targeted update in local memory
+            const item = allEnquiriesCache.find(e => e.id === id);
+            if (item) item.status = newStatus;
+            const currentItem = currentEnquiries.find(e => e.id === id);
+            if (currentItem) currentItem.status = newStatus;
+            // Update counts locally without network reload
+            updateMetricCountersLocally();
+          } else {
+            showToast(data.error || 'Failed to update status', 'error');
+            if (selectEl && activeEnquiry) selectEl.value = activeEnquiry.status;
+          }
+        } catch (err) {
+          if (selectEl) selectEl.disabled = false;
+          showToast('Connection error', 'error');
+        }
+      }
+
+      // Helper to compute and update metrics instantly without network roundtrips
+      function updateMetricCountersLocally() {
+        const total = allEnquiriesCache.length;
+        const newCount = allEnquiriesCache.filter(e => e.status === 'New').length;
+        const inProgressCount = allEnquiriesCache.filter(e => e.status === 'In Progress').length;
+        const contactedCount = allEnquiriesCache.filter(e => e.status === 'Contacted').length;
+        const completedCount = allEnquiriesCache.filter(e => e.status === 'Completed').length;
+
+        const totalEl = document.getElementById('stat-total');
+        if (totalEl) totalEl.textContent = total;
+        const newEl = document.getElementById('stat-new');
+        if (newEl) newEl.textContent = newCount;
+        const progEl = document.getElementById('stat-inprogress');
+        if (progEl) progEl.textContent = inProgressCount;
+        const contEl = document.getElementById('stat-contacted');
+        if (contEl) contEl.textContent = contactedCount;
+        const compEl = document.getElementById('stat-completed');
+        if (compEl) compEl.textContent = completedCount;
+      }
+
+      // Delete Enquiry Permanently with Targeted UI Removal
+      async function confirmDeleteEnquiry(id, triggerBtn) {
+        if (!id) {
+          showToast('Invalid enquiry ID for deletion', 'error');
+          return;
+        }
+
+        const cleanId = String(id).trim();
+        const enq = allEnquiriesCache.find(e => e.id === cleanId || (e._id && String(e._id) === cleanId));
+        const name = enq ? enq.name : `#${cleanId}`;
+
+        if (!confirm(`Are you sure you want to delete this enquiry? (${name}) will be permanently removed from MongoDB.`)) {
+          return;
+        }
+
+        if (triggerBtn) {
+          triggerBtn.disabled = true;
+          triggerBtn.textContent = 'Deleting...';
+        }
+
+        try {
+          const res = await authFetch(`/api/admin/enquiries/${encodeURIComponent(cleanId)}`, { method: 'DELETE' });
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            showToast(data.message || 'Enquiry deleted successfully', 'success');
+
+            // Close modal if open
+            const detailModal = document.getElementById('modal-enquiry-detail');
+            if (detailModal && detailModal.classList.contains('open')) {
+              detailModal.classList.remove('open');
+            }
+
+            // TARGETED UI UPDATE: Remove only deleted item from memory and DOM immediately
+            allEnquiriesCache = allEnquiriesCache.filter(e => e.id !== cleanId && (e._id ? String(e._id) !== cleanId : true));
+            currentEnquiries = currentEnquiries.filter(e => e.id !== cleanId && (e._id ? String(e._id) !== cleanId : true));
+            applyEnquiriesFilter();
+            updateMetricCountersLocally();
+            loadStats();
+          } else {
+            showToast(data.error || 'Failed to delete enquiry', 'error');
+            if (triggerBtn) {
+              triggerBtn.disabled = false;
+              triggerBtn.textContent = '🗑️ Delete';
+            }
+          }
+        } catch (err) {
+          showToast('Connection error while deleting enquiry', 'error');
+          if (triggerBtn) {
+            triggerBtn.disabled = false;
+            triggerBtn.textContent = '🗑️ Delete';
+          }
+        }
+      }
+
+      // Open Enquiry Detail Modal
+      function openEnquiryModal(id) {
+        const enq = currentEnquiries.find(e => e.id === id);
+        if (!enq) return;
+
+        activeEnquiry = enq;
+        document.getElementById('modal-traveler-name').textContent = enq.name;
+        document.getElementById('modal-traveler-email').textContent = enq.email;
+        document.getElementById('modal-traveler-phone').textContent = enq.whatsapp;
+        document.getElementById('modal-interest').textContent = enq.interest;
+        document.getElementById('modal-dates').textContent = enq.travelDates || 'Flexible / Not specified';
+        document.getElementById('modal-travelers').textContent = enq.travelers || 'Not specified';
+        document.getElementById('modal-created').textContent = new Date(enq.createdAt).toLocaleString('en-IN');
+        document.getElementById('modal-message').textContent = enq.message;
+        document.getElementById('modal-edit-status').value = enq.status;
+        document.getElementById('modal-edit-notes').value = enq.notes || '';
+
+        const badgeBox = document.getElementById('modal-status-badge');
+        badgeBox.innerHTML = `<span class="status-badge status-badge-${enq.status.toLowerCase().replace(/\s+/g, '')}">${enq.status}</span>`;
+
+        const cleanPhone = enq.whatsapp.replace(/[^0-9]/g, '');
+        const waBtn = document.getElementById('modal-wa-btn');
+        waBtn.href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Namaste ${enq.name}! Bihar Tourism desk responding to your enquiry regarding ${enq.interest}.`)}`;
+
+        document.getElementById('modal-enquiry-detail').classList.add('open');
+      }
+
+      // Save Notes & Status from Detail Modal
+      document.getElementById('btn-save-enquiry-notes').addEventListener('click', async () => {
+        if (!activeEnquiry) return;
+        const status = document.getElementById('modal-edit-status').value;
+        const notes = document.getElementById('modal-edit-notes').value;
+
+        const btn = document.getElementById('btn-save-enquiry-notes');
+        btn.disabled = true;
+        btn.textContent = 'Saving...';
+
+        try {
+          const res = await authFetch(`/api/admin/enquiries/${activeEnquiry.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status, notes })
+          });
+          const data = await res.json();
+          btn.disabled = false;
+          btn.textContent = 'Save Status & Notes';
+
+          if (data.success) {
+            showToast('Enquiry updated successfully');
+            activeEnquiry.status = status;
+            activeEnquiry.notes = notes;
+            document.getElementById('modal-enquiry-detail').classList.remove('open');
+            applyEnquiriesFilter();
+            updateMetricCountersLocally();
+          } else {
+            showToast(data.error || 'Failed to update', 'error');
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Save Status & Notes';
+          showToast('Connection error', 'error');
+        }
+      });
+
+      // Delete from Detail Modal
+      document.getElementById('btn-modal-delete-enquiry').addEventListener('click', () => {
+        if (!activeEnquiry) return;
+        confirmDeleteEnquiry(activeEnquiry.id, document.getElementById('btn-modal-delete-enquiry'));
+      });
+
+      // Close Detail Modal
+      document.getElementById('btn-close-enquiry-modal').addEventListener('click', () => {
+        document.getElementById('modal-enquiry-detail').classList.remove('open');
+      });
+
+      /* ==========================================================================
+         DESTINATIONS MANAGEMENT ENGINE (CRUD + PHONE GALLERY IMAGE UPLOADS)
+         ========================================================================== */
+
+      // Load Destinations (Admin gets both published & drafts with caching)
+      async function loadDestinations(forceRefresh = false) {
+        if (inFlightDestinations) return;
+        if (destinationsLoaded && !forceRefresh) {
+          renderDestinationsTable(currentDestinations);
+          return;
+        }
+
+        inFlightDestinations = true;
+        const tbody = document.getElementById('destinations-tbody');
+        if (!currentDestinations.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #64748b; padding: 2rem;">Loading destinations...</td></tr>`;
+        }
+
+        try {
+          const res = await authFetch('/api/admin/destinations');
+          if (res.status === 401) {
+            window.location.href = '/admin-login.html';
+            return;
+          }
+          const data = await res.json();
+          if (data.success) {
+            currentDestinations = data.destinations || [];
+            destinationsLoaded = true;
+            renderDestinationsTable(currentDestinations);
+            const badge = document.getElementById('stat-dest-count');
+            if (badge) badge.textContent = currentDestinations.length;
+            const cardVal = document.getElementById('stat-destinations');
+            if (cardVal) cardVal.textContent = currentDestinations.length;
+          } else {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #dc2626; padding: 2rem;">Error loading destinations: ${data.error || ''}</td></tr>`;
+          }
+        } catch (err) {
+          if (!currentDestinations.length) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: #dc2626; padding: 2rem;">Failed to connect to destinations API.</td></tr>`;
+          }
+        } finally {
+          inFlightDestinations = false;
+        }
+      }
+
+      function renderDestinationsTable(destinations) {
+        const tbody = document.getElementById('destinations-tbody');
+        if (!destinations.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 3rem 1.5rem; color: #64748b;">No destinations found in catalog. Click "+ Add New Destination" to create one.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = destinations.map(d => {
+          const isPublished = d.published !== false;
+          const statusBadge = isPublished
+            ? `<span class="status-badge status-badge-published">● Published</span>`
+            : `<span class="status-badge status-badge-draft">Draft (Hidden)</span>`;
+
+          return `
+            <tr data-dest-id="${d._id || d.id || d.slug}">
+              <td style="width: 70px;">
+                <img 
+                  src="${d.image}" 
+                  alt="${escapeHtml(d.name)}" 
+                  style="width: 58px; height: 42px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0; background: #f8fafc;" 
+                  onerror="this.src='/assets/bodhgaya.svg'" 
+                />
+              </td>
+              <td>
+                <div style="font-weight: 700; color: #0f172a; font-size: 0.9375rem;">${escapeHtml(d.name)}</div>
+                <div style="font-size: 0.75rem; color: #64748b; font-family: monospace;">Slug: ${escapeHtml(d.slug || d.id)}</div>
+                <div style="font-size: 0.75rem; color: #64748b; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 2px;" title="${escapeHtml(d.shortDescription)}">
+                  ${escapeHtml(d.shortDescription)}
+                </div>
+              </td>
+              <td>
+                <span class="status-badge" style="background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">
+                  ${escapeHtml(d.category)}
+                </span>
+              </td>
+              <td>
+                <div style="font-size: 0.8125rem; color: #475569;">${escapeHtml(d.location)}</div>
+                <div style="font-size: 0.72rem; color: #94a3b8;">${escapeHtml(d.bestTime || 'Oct–Mar')}</div>
+              </td>
+              <td>
+                ${statusBadge}
+              </td>
+              <td style="text-align: right;">
+                <div class="dest-actions-wrap">
+                  <a href="/destination.html?id=${d.slug || d.id}" target="_blank" class="btn-action-dest btn-action-preview" title="Preview on Public Site">
+                    👁️ Preview
+                  </a>
+                  <button type="button" class="btn-action-dest btn-action-edit btn-edit-dest" data-id="${d._id || d.id || d.slug}" title="Edit Destination Details">
+                    ✏️ Edit
+                  </button>
+                  <button type="button" class="btn-action-dest btn-action-delete btn-delete-dest" data-id="${d._id || d.id || d.slug}" title="Delete Destination">
+                    🗑️ Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        // Wire Edit buttons
+        tbody.querySelectorAll('.btn-edit-dest').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            openEditDestinationModal(id);
+          });
+        });
+
+        // Wire Delete buttons
+        tbody.querySelectorAll('.btn-delete-dest').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            confirmDeleteDestination(id, btn);
+          });
+        });
+      }
+
+      // Helper to display image preview
+      function setMainImagePreview(imgSrc, fileName = '') {
+        const wrapper = document.getElementById('image-preview-wrapper');
+        const previewImg = document.getElementById('image-preview-img');
+        const filenameLabel = document.getElementById('image-preview-filename');
+        const textInput = document.getElementById('dest-image');
+
+        if (imgSrc) {
+          previewImg.src = imgSrc;
+          textInput.value = imgSrc;
+          filenameLabel.textContent = fileName || (imgSrc.startsWith('data:') ? 'Photo chosen from device' : imgSrc);
+          wrapper.style.display = 'block';
+        } else {
+          wrapper.style.display = 'none';
+          textInput.value = '';
+          previewImg.src = '';
+        }
+      }
+
+      // Helper to render gallery thumbnails
+      function renderGalleryPreview() {
+        const container = document.getElementById('gallery-preview-container');
+        container.innerHTML = currentGalleryList.map((url, idx) => `
+          <div class="gallery-preview-item">
+            <img src="${url}" alt="Gallery photo ${idx + 1}" onerror="this.src='/assets/bodhgaya.svg'" />
+            <button type="button" class="gallery-remove-btn" data-idx="${idx}" title="Remove photo">&times;</button>
+          </div>
+        `).join('');
+
+        container.querySelectorAll('.gallery-remove-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = parseInt(btn.getAttribute('data-idx'), 10);
+            currentGalleryList.splice(idx, 1);
+            renderGalleryPreview();
+          });
+        });
+      }
+
+      // Auto-generate slug from Destination Name
+      document.getElementById('dest-name').addEventListener('input', (e) => {
+        const idField = document.getElementById('dest-id');
+        // Only auto-generate if we are creating a new destination (no existing id)
+        if (!idField.value) {
+          const generated = e.target.value
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+          document.getElementById('dest-slug').value = generated;
+        }
+      });
+
+      // Synchronize text URL input with preview
+      document.getElementById('dest-image').addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        if (val) {
+          setMainImagePreview(val, val);
+        } else {
+          setMainImagePreview('', '');
+        }
+      });
+
+      // Device File Upload Handler (Phone Gallery / Files / Camera)
+      const fileInput = document.getElementById('dest-file-input');
+      const browseFileBtn = document.getElementById('btn-browse-file');
+      const changeImgBtn = document.getElementById('btn-change-image');
+      const removeImgBtn = document.getElementById('btn-remove-image');
+
+      browseFileBtn.addEventListener('click', () => fileInput.click());
+      changeImgBtn.addEventListener('click', () => fileInput.click());
+      removeImgBtn.addEventListener('click', () => {
+        pendingUploadedFile = null;
+        setMainImagePreview('', '');
+      });
+
+      // High-speed client-side image compression for instant uploads
+      async function compressImageFile(file, maxWidth = 1600, quality = 0.85) {
+        if (!file.type.startsWith('image/') || file.type === 'image/svg+xml' || file.size < 250 * 1024) {
+          return file; // Already small enough
+        }
+        return new Promise((resolve) => {
+          const img = new Image();
+          const objUrl = URL.createObjectURL(file);
+          img.onload = () => {
+            URL.revokeObjectURL(objUrl);
+            let w = img.width;
+            let h = img.height;
+            if (w > maxWidth || h > maxWidth) {
+              if (w > h) {
+                h = Math.round((h * maxWidth) / w);
+                w = maxWidth;
+              } else {
+                w = Math.round((w * maxWidth) / h);
+                h = maxWidth;
+              }
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            canvas.toBlob((blob) => {
+              if (blob && blob.size < file.size) {
+                const compressed = new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), { type: 'image/jpeg' });
+                resolve(compressed);
+              } else {
+                resolve(file);
+              }
+            }, 'image/jpeg', quality);
+          };
+          img.onerror = () => {
+            URL.revokeObjectURL(objUrl);
+            resolve(file);
+          };
+          img.src = objUrl;
+        });
+      }
+
+      fileInput.addEventListener('change', async () => {
+        if (!fileInput.files || fileInput.files.length === 0) return;
+        const originalFile = fileInput.files[0];
+
+        // Validate image file type
+        const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/svg+xml'];
+        if (!validTypes.includes(originalFile.type)) {
+          showToast('Please select a valid photograph (JPG, JPEG, PNG, or WebP).', 'error');
+          return;
+        }
+
+        // Preview immediately via FileReader
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setMainImagePreview(e.target.result, `${originalFile.name} (Compressing...)`);
+        };
+        reader.readAsDataURL(originalFile);
+
+        showToast('Optimizing photo for fast upload...', 'info');
+        const fileToUpload = await compressImageFile(originalFile);
+
+        const formData = new FormData();
+        formData.append('image', fileToUpload);
+
+        try {
+          const res = await authFetch('/api/admin/upload', {
+            method: 'POST',
+            body: formData
+          });
+          const data = await res.json();
+          if (data.success && data.url) {
+            setMainImagePreview(data.url, `${originalFile.name} (Uploaded)`);
+            showToast('Photograph uploaded successfully!');
+          } else {
+            showToast(data.error || 'Failed to upload photo', 'error');
+          }
+        } catch (err) {
+          showToast('Upload failed. Check connection.', 'error');
+        }
+      });
+
+      // Multi-photo gallery upload handler
+      const galleryInput = document.getElementById('dest-gallery-input');
+      const addGalleryBtn = document.getElementById('btn-add-gallery');
+      addGalleryBtn.addEventListener('click', () => galleryInput.click());
+
+      galleryInput.addEventListener('change', async () => {
+        if (!galleryInput.files || galleryInput.files.length === 0) return;
+        const formData = new FormData();
+        for (let i = 0; i < galleryInput.files.length; i++) {
+          formData.append('gallery', galleryInput.files[i]);
+        }
+
+        showToast(`Uploading ${galleryInput.files.length} gallery photos...`, 'success');
+        try {
+          const res = await authFetch('/api/admin/upload-gallery', {
+            method: 'POST',
+            body: formData
+          });
+          const data = await res.json();
+          if (data.success && Array.isArray(data.urls)) {
+            currentGalleryList.push(...data.urls);
+            renderGalleryPreview();
+            showToast(`${data.urls.length} photos added to gallery!`);
+          } else {
+            showToast(data.error || 'Gallery upload failed', 'error');
+          }
+        } catch (err) {
+          showToast('Gallery upload failed', 'error');
+        }
+      });
+
+      let editingDestinationId = null;
+
+      // Helper to display error inside the modal form
+      function showFormError(msg, fieldIdToFocus = null) {
+        const errorBox = document.getElementById('dest-error-box');
+        if (errorBox) {
+          errorBox.textContent = msg;
+          errorBox.style.display = 'block';
+        }
+        showToast(msg, 'error');
+        if (fieldIdToFocus) {
+          const el = document.getElementById(fieldIdToFocus);
+          if (el) {
+            el.focus();
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+
+      // Close Destination Modal and reset state
+      function closeDestinationModal() {
+        const modal = document.getElementById('modal-dest-form');
+        if (modal) {
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+        }
+
+        editingDestinationId = null;
+
+        const form = document.getElementById('destinationForm') || document.getElementById('dest-add-form');
+        if (form) form.reset();
+
+        setMainImagePreview('', '');
+        currentGalleryList = [];
+        renderGalleryPreview();
+
+        const errorBox = document.getElementById('dest-error-box');
+        if (errorBox) {
+          errorBox.textContent = '';
+          errorBox.style.display = 'none';
+        }
+
+        const saveBtn = document.getElementById('saveDestinationBtn') || document.getElementById('btn-submit-dest');
+        if (saveBtn) {
+          saveBtn.disabled = false;
+          saveBtn.textContent = 'Save Destination';
+        }
+      }
+
+      // Open Modal to Add Destination
+      function openAddDestinationModal() {
+        editingDestinationId = null;
+
+        const errorBox = document.getElementById('dest-error-box');
+        if (errorBox) {
+          errorBox.textContent = '';
+          errorBox.style.display = 'none';
+        }
+
+        const title = document.getElementById('modal-dest-title');
+        if (title) title.textContent = 'Add Destination';
+
+        document.getElementById('dest-id').value = '';
+        document.getElementById('dest-name').value = '';
+        document.getElementById('dest-slug').value = '';
+        document.getElementById('dest-category').value = 'Spiritual';
+        document.getElementById('dest-location').value = 'Bihar, India';
+        document.getElementById('dest-short-desc').value = '';
+        document.getElementById('dest-overview').value = '';
+        document.getElementById('dest-best-time').value = 'October to March';
+        document.getElementById('dest-highlights').value = '';
+        document.getElementById('dest-published').checked = true;
+
+        setMainImagePreview('/assets/bodhgaya.svg', 'Default photo (/assets/bodhgaya.svg)');
+        currentGalleryList = ['/assets/bodhgaya.svg'];
+        renderGalleryPreview();
+
+        const saveBtn = document.getElementById('saveDestinationBtn') || document.getElementById('btn-submit-dest');
+        if (saveBtn) {
+          saveBtn.disabled = false;
+          saveBtn.textContent = 'Save Destination';
+        }
+
+        const modal = document.getElementById('modal-dest-form');
+        if (modal) {
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        }
+        document.getElementById('dest-name').focus();
+      }
+
+      // Open Modal to Edit Destination
+      function openEditDestinationModal(id) {
+        editingDestinationId = id;
+
+        const errorBox = document.getElementById('dest-error-box');
+        if (errorBox) {
+          errorBox.textContent = '';
+          errorBox.style.display = 'none';
+        }
+
+        const dest = currentDestinations.find(d => d.id === id || d.slug === id);
+        if (!dest) {
+          showToast('Destination not found', 'error');
+          return;
+        }
+
+        const title = document.getElementById('modal-dest-title');
+        if (title) title.textContent = `Edit Destination: ${dest.name}`;
+
+        document.getElementById('dest-id').value = dest.id;
+        document.getElementById('dest-name').value = dest.name || '';
+        document.getElementById('dest-slug').value = dest.slug || dest.id || '';
+        document.getElementById('dest-category').value = dest.category || 'Spiritual';
+        document.getElementById('dest-location').value = dest.location || 'Bihar, India';
+        document.getElementById('dest-short-desc').value = dest.shortDescription || '';
+        document.getElementById('dest-overview').value = dest.overview || dest.fullDescription || dest.shortDescription || '';
+        document.getElementById('dest-best-time').value = dest.bestTime || 'October to March';
+        document.getElementById('dest-published').checked = dest.published !== false;
+
+        // Process highlights
+        if (Array.isArray(dest.highlights)) {
+          document.getElementById('dest-highlights').value = dest.highlights.join('\n');
+        } else if (typeof dest.highlights === 'string') {
+          document.getElementById('dest-highlights').value = dest.highlights;
+        } else {
+          document.getElementById('dest-highlights').value = '';
+        }
+
+        // Keep existing image visible
+        const existingImg = dest.image || '/assets/bodhgaya.svg';
+        setMainImagePreview(existingImg, `Existing photo: ${existingImg}`);
+
+        // Gallery
+        currentGalleryList = Array.isArray(dest.gallery) && dest.gallery.length > 0 ? [...dest.gallery] : [existingImg];
+        renderGalleryPreview();
+
+        const saveBtn = document.getElementById('saveDestinationBtn') || document.getElementById('btn-submit-dest');
+        if (saveBtn) {
+          saveBtn.disabled = false;
+          saveBtn.textContent = 'Update Destination';
+        }
+
+        const modal = document.getElementById('modal-dest-form');
+        if (modal) {
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        }
+      }
+
+      // Delete Destination Permanently with Targeted UI Update
+      async function confirmDeleteDestination(id, triggerBtn) {
+        if (!id) {
+          showToast('Invalid destination ID for deletion', 'error');
+          return;
+        }
+
+        const cleanId = String(id).trim();
+        const lowerId = cleanId.toLowerCase();
+        const dest = currentDestinations.find(d => 
+          (d.id && String(d.id).toLowerCase() === lowerId) || 
+          (d.slug && String(d.slug).toLowerCase() === lowerId) ||
+          (d._id && String(d._id) === cleanId)
+        );
+        const name = dest ? dest.name : cleanId;
+
+        if (!confirm(`Are you sure you want to delete this destination? "${name}" will be permanently removed from MongoDB.`)) {
+          return;
+        }
+
+        if (triggerBtn) {
+          triggerBtn.disabled = true;
+          triggerBtn.textContent = 'Deleting...';
+        }
+
+        try {
+          const res = await authFetch(`/api/admin/destinations/${encodeURIComponent(cleanId)}`, { method: 'DELETE' });
+          const data = await res.json();
+          if (res.ok && data.success) {
+            showToast('Destination deleted successfully', 'success');
+
+            // TARGETED UI UPDATE: Remove only deleted item from memory and DOM immediately
+            currentDestinations = currentDestinations.filter(d => 
+              d.id !== cleanId && 
+              d.slug !== cleanId &&
+              (d._id ? String(d._id) !== cleanId : true) &&
+              (d.id ? d.id.toLowerCase() !== lowerId : true) &&
+              (d.slug ? d.slug.toLowerCase() !== lowerId : true)
+            );
+            renderDestinationsTable(currentDestinations);
+
+            // Update destination counters directly without network roundtrips
+            const badge = document.getElementById('stat-dest-count');
+            if (badge) badge.textContent = currentDestinations.length;
+            const cardVal = document.getElementById('stat-destinations');
+            if (cardVal) cardVal.textContent = currentDestinations.length;
+            loadStats();
+          } else {
+            showToast(data.error || 'Failed to delete destination', 'error');
+            if (triggerBtn) {
+              triggerBtn.disabled = false;
+              triggerBtn.textContent = '🗑️ Delete';
+            }
+          }
+        } catch (err) {
+          showToast('Connection error deleting destination', 'error');
+          if (triggerBtn) {
+            triggerBtn.disabled = false;
+            triggerBtn.textContent = '🗑️ Delete';
+          }
+        }
+      }
+
+      // Hook up Destination Modal Open, Close, and Cancel
+      const destModal = document.getElementById('modal-dest-form');
+      const addDestBtn = document.getElementById('btn-add-dest-modal');
+      const closeDestBtn = document.getElementById('btn-close-dest-modal');
+      const cancelDestBtn = document.getElementById('cancelDestinationBtn') || document.getElementById('btn-cancel-dest-modal');
+      const destForm = document.getElementById('destinationForm') || document.getElementById('dest-add-form');
+
+      if (addDestBtn) addDestBtn.addEventListener('click', openAddDestinationModal);
+      if (closeDestBtn) closeDestBtn.addEventListener('click', closeDestinationModal);
+      if (cancelDestBtn) cancelDestBtn.addEventListener('click', closeDestinationModal);
+
+      // Also wire any fallback cancel buttons
+      document.querySelectorAll('#btn-cancel-dest-modal, #cancelDestinationBtn').forEach(b => {
+        b.addEventListener('click', closeDestinationModal);
+      });
+
+      if (destModal) {
+        destModal.addEventListener('click', (e) => {
+          if (e.target === destModal) closeDestinationModal();
+        });
+      }
+
+      // Submit Add/Edit Destination Form
+      if (destForm) {
+        destForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const errorBox = document.getElementById('dest-error-box');
+          if (errorBox) errorBox.style.display = 'none';
+
+          const name = document.getElementById('dest-name').value.trim();
+          const rawSlug = document.getElementById('dest-slug').value.trim();
+          const slug = (rawSlug || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          const category = document.getElementById('dest-category').value.trim();
+          const location = document.getElementById('dest-location').value.trim();
+          const image = document.getElementById('dest-image').value.trim();
+          const shortDescription = document.getElementById('dest-short-desc').value.trim();
+          const overview = document.getElementById('dest-overview').value.trim();
+          const bestTime = document.getElementById('dest-best-time').value.trim();
+          const published = document.getElementById('dest-published').checked;
+          const rawHighlights = document.getElementById('dest-highlights').value;
+
+          // Validations
+          if (!name) {
+            showFormError('Destination name is required. Please enter a name.', 'dest-name');
+            return;
+          }
+
+          if (!slug) {
+            showFormError('Unique slug is required for URL navigation.', 'dest-slug');
+            return;
+          }
+
+          if (!category) {
+            showFormError('Please select a destination category.', 'dest-category');
+            return;
+          }
+
+          if (!location) {
+            showFormError('District / Location is required.', 'dest-location');
+            return;
+          }
+
+          if (!shortDescription || shortDescription.length < 5) {
+            showFormError('Short summary description is required (at least 5 characters).', 'dest-short-desc');
+            return;
+          }
+
+          if (!overview || overview.length < 10) {
+            showFormError('Full description & overview is required (at least 10 characters).', 'dest-overview');
+            return;
+          }
+
+          // Image handling: For new destination, ensure image is chosen or default provided
+          let finalImage = image;
+          if (!finalImage) {
+            if (editingDestinationId) {
+              const currentDest = currentDestinations.find(d => d.id === editingDestinationId || d.slug === editingDestinationId);
+              finalImage = currentDest ? currentDest.image : '/assets/bodhgaya.svg';
+            } else {
+              finalImage = '/assets/bodhgaya.svg';
+            }
+          }
+
+          const highlights = rawHighlights
+            .split('\n')
+            .map(h => h.trim())
+            .filter(h => h.length > 0);
+
+          const payload = {
+            name,
+            slug,
+            category,
+            location: location || 'Bihar, India',
+            image: finalImage,
+            gallery: currentGalleryList.length > 0 ? currentGalleryList : [finalImage],
+            shortDescription,
+            overview,
+            fullDescription: overview,
+            bestTime: bestTime || 'October to March',
+            highlights,
+            published
+          };
+
+          const submitBtn = document.getElementById('saveDestinationBtn') || document.getElementById('btn-submit-dest');
+          submitBtn.disabled = true;
+          submitBtn.textContent = editingDestinationId ? 'Updating...' : 'Saving...';
+
+          try {
+            let res;
+            if (editingDestinationId) {
+              res = await authFetch(`/api/admin/destinations/${encodeURIComponent(editingDestinationId)}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+            } else {
+              res = await authFetch('/api/admin/destinations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+            }
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+              showToast(editingDestinationId ? `Destination "${name}" updated successfully!` : `Destination "${name}" saved successfully!`);
+              closeDestinationModal();
+
+              // TARGETED UI UPDATE: Add or update destination in place without full page/data reload
+              if (editingDestinationId) {
+                const idx = currentDestinations.findIndex(d => d.id === editingDestinationId || d.slug === editingDestinationId);
+                if (idx !== -1) {
+                  currentDestinations[idx] = data.destination;
+                }
+              } else if (data.destination) {
+                currentDestinations.unshift(data.destination);
+              }
+              renderDestinationsTable(currentDestinations);
+
+              // Update counters locally
+              const badge = document.getElementById('stat-dest-count');
+              if (badge) badge.textContent = currentDestinations.length;
+              const cardVal = document.getElementById('stat-destinations');
+              if (cardVal) cardVal.textContent = currentDestinations.length;
+            } else {
+              submitBtn.disabled = false;
+              submitBtn.textContent = editingDestinationId ? 'Update Destination' : 'Save Destination';
+              showFormError(data.error || 'Failed to save destination. Check for duplicate slug or required fields.');
+            }
+          } catch (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = editingDestinationId ? 'Update Destination' : 'Save Destination';
+            showFormError('Connection error saving destination. Please try again.');
+          }
+        });
+      }
+
+      /* ==========================================================================
+         TAB SWITCHING & GENERAL CONTROLS
+         ========================================================================== */
+
+      // Fast Tab Switching (Uses memory cache)
+      document.querySelectorAll('.admin-nav-item[data-tab]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.admin-nav-item').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          const pane = document.getElementById(tabId);
+          if (pane) pane.style.display = 'block';
+
+          if (tabId === 'tab-destinations') loadDestinations();
+          if (tabId === 'tab-enquiries') loadEnquiries();
+
+          // Auto close mobile drawer when navigation tab is clicked
+          const sidebar = document.querySelector('.admin-sidebar');
+          const overlay = document.getElementById('sidebar-overlay');
+          if (sidebar) sidebar.classList.remove('mobile-open');
+          if (overlay) overlay.classList.remove('active');
+        });
+      });
+
+      // Mobile Drawer Toggle & Overlay Listeners
+      const toggleSidebarBtn = document.getElementById('btn-toggle-sidebar');
+      const closeSidebarBtn = document.getElementById('btn-close-sidebar');
+      const sidebarOverlay = document.getElementById('sidebar-overlay');
+      const adminSidebar = document.querySelector('.admin-sidebar');
+
+      if (toggleSidebarBtn && adminSidebar) {
+        toggleSidebarBtn.addEventListener('click', () => {
+          adminSidebar.classList.toggle('mobile-open');
+          if (sidebarOverlay) sidebarOverlay.classList.toggle('active');
+        });
+      }
+
+      if (closeSidebarBtn && adminSidebar) {
+        closeSidebarBtn.addEventListener('click', () => {
+          adminSidebar.classList.remove('mobile-open');
+          if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+        });
+      }
+
+      if (sidebarOverlay && adminSidebar) {
+        sidebarOverlay.addEventListener('click', () => {
+          adminSidebar.classList.remove('mobile-open');
+          sidebarOverlay.classList.remove('active');
+        });
+      }
+
+      // Instant Status Filter Pills (0ms Client-Side Filtering)
+      document.querySelectorAll('.status-pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.status-pill-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyEnquiriesFilter();
+        });
+      });
+
+      // Instant Search & Category Filters (Debounced local search)
+      let searchDebounce;
+      document.getElementById('enquiry-search').addEventListener('input', () => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(applyEnquiriesFilter, 60);
+      });
+      document.getElementById('enquiry-interest-filter').addEventListener('change', applyEnquiriesFilter);
+
+      // Refresh Button (Forces fresh backend load)
+      document.getElementById('btn-refresh').addEventListener('click', async () => {
+        const refreshBtn = document.getElementById('btn-refresh');
+        refreshBtn.disabled = true;
+        refreshBtn.textContent = '↻ Refreshing...';
+        await Promise.allSettled([
+          loadStats(),
+          loadEnquiries(true),
+          loadDestinations(true)
+        ]);
+        refreshBtn.disabled = false;
+        refreshBtn.textContent = '↻ Refresh Data';
+        showToast('Dashboard data refreshed');
+      });
+
+      // Export CSV Button
+      document.getElementById('btn-export-csv').addEventListener('click', () => {
+        const token = getAuthToken();
+        const exportUrl = token ? `/api/admin/enquiries/export?token=${encodeURIComponent(token)}` : '/api/admin/enquiries/export';
+        window.location.href = exportUrl;
+        showToast('Exporting CSV...');
+      });
+
+      // Seed Data Button
+      document.getElementById('btn-seed-data').addEventListener('click', async () => {
+        if (!confirm('Load sample traveler inquiries into the system?')) return;
+        try {
+          const res = await authFetch('/api/admin/enquiries/seed', { method: 'POST' });
+          const data = await res.json();
+          if (data.success) {
+            showToast('Sample inquiries loaded!');
+            loadStats();
+            loadEnquiries();
+          }
+        } catch (err) {
+          showToast('Failed to seed enquiries', 'error');
+        }
+      });
+
+      // WhatsApp Quick Desk Templates
+      const waTemplates = {
+        welcome: "Namaste! Thank you for contacting the Bihar State Tourism Development Corporation desk. We have received your inquiry. How can we best assist your travel plans across Bihar today?",
+        itinerary: "Namaste! Your customized Bihar Tourism itinerary and package quote is now prepared by our certified travel coordinator. Please review the details and let us know if you have any questions or adjustments.",
+        buddhist: "Namaste! We are pleased to provide you with the sacred Buddhist Circuit package covering the Mahabodhi Temple in Bodh Gaya, ancient Nalanda Mahavihara ruins, and Rajgir Peace Pagoda.",
+        valmiki: "Namaste! Regarding your interest in the Valmiki Tiger Reserve, eco-lodge bookings and morning/evening jungle jeep safari slots are available. May we confirm your desired dates?",
+        cultural: "Namaste! Welcome to the cultural journey of Bihar. We can arrange guided visits to Madhubani master artisan workshops, local traditional cuisine trails, and historic monuments.",
+        custom: ""
+      };
+
+      const waTemplateSelect = document.getElementById('wa-template');
+      const waMsgArea = document.getElementById('wa-message');
+      waMsgArea.value = waTemplates.welcome;
+
+      waTemplateSelect.addEventListener('change', () => {
+        const val = waTemplateSelect.value;
+        if (waTemplates[val] !== undefined) {
+          waMsgArea.value = waTemplates[val];
+        }
+      });
+
+      document.getElementById('quick-wa-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const phone = document.getElementById('wa-phone').value.trim();
+        const msg = document.getElementById('wa-message').value.trim();
+
+        let clean = phone.replace(/[^0-9]/g, '');
+        if (clean.length === 10) clean = '91' + clean;
+        if (!clean || clean.length < 10) {
+          showToast('Please enter a valid 10-digit Indian phone number', 'error');
+          return;
+        }
+
+        if (submitBtn) {
+          submitBtn.textContent = '🚀 Opening WhatsApp...';
+          setTimeout(() => {
+            submitBtn.innerHTML = `
+              <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 32 32">
+                <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.4 0-.6.2-.8.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2c0 1.9 1.4 3.7 1.6 3.9.2.3 2.7 4.1 6.5 5.8 3.9 1.6 3.9 1.1 4.6 1 .7 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+              </svg>
+              Open WhatsApp Chat With Traveler &rarr;
+            `;
+          }, 1200);
+        }
+
+        const url = `https://wa.me/${clean}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank');
+        showToast('WhatsApp Chat launched!');
+      });
+
+      // Sign Out
+      document.getElementById('btn-logout').addEventListener('click', async () => {
+        try {
+          await authFetch('/api/admin/logout', { method: 'POST' });
+        } catch (err) {}
+        clearAuthToken();
+        window.location.href = '/admin-login.html';
+      });
+
+      // Initialize on Page Load (Fast Parallel Loading & No Redundant Calls)
+      document.addEventListener('DOMContentLoaded', async () => {
+        const isDestHash = window.location.hash === '#destinations';
+        if (isDestHash) {
+          document.querySelectorAll('.admin-nav-item').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+          const destBtn = document.querySelector('.admin-nav-item[data-tab="tab-destinations"]');
+          if (destBtn) destBtn.classList.add('active');
+          const destPane = document.getElementById('tab-destinations');
+          if (destPane) destPane.style.display = 'block';
+        }
+
+        // Fast parallel fetch
+        await Promise.allSettled([
+          checkAuth(),
+          loadStats(),
+          isDestHash ? loadDestinations() : loadEnquiries()
+        ]);
+
+        // Prefetch other tab in background
+        setTimeout(() => {
+          if (isDestHash) {
+            loadEnquiries();
+          } else {
+            loadDestinations();
+          }
+        }, 200);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Bihar — Tourist Destinations</title>
+    <meta name="description" content="Explore Bihar’s premier tourist destinations: Bodh Gaya, Nalanda, Rajgir, Patna, Vaishali, and Valmiki Tiger Reserve. Search and filter by History, Spiritual, and Nature." />
+    <meta property="og:title" content="Explore Bihar — Tourist Destinations" />
+    <meta property="og:description" content="Explore Bihar’s premier tourist destinations: Bodh Gaya, Nalanda, Rajgir, Patna, Vaishali, and Valmiki Tiger Reserve. Search and filter by History, Spiritual, and Nature." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+      <div class="container">
+        <div class="nav-row">
+          <!-- Zone 1: Brand Wordmark -->
+          <a href="/index.html" class="brand-mark" aria-label="Bihar Tourism Home">
+            <svg class="brand-icon-symbol" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 5V27M5 16H27M8.2 8.2L23.8 23.8M8.2 23.8L23.8 8.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="3.5" fill="currentColor"/>
+            </svg>
+            Bihar <span>Tourism</span>
+          </a>
+
+          <!-- Zone 2: Navigation Links -->
+          <nav aria-label="Primary Navigation">
+            <ul class="nav-links">
+              <li><a href="/index.html" class="nav-link">Home</a></li>
+              <li><a href="/destinations.html" class="nav-link active">Destinations</a></li>
+              <li><a href="/experiences.html" class="nav-link">Experiences</a></li>
+              <li><a href="/about.html" class="nav-link">About Bihar</a></li>
+              <li><a href="/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Zone 3: Header Actions -->
+          <div class="header-actions">
+            <a href="/contact.html" class="btn-header-cta">Plan Your Journey</a>
+            <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span class="hamburger-line line-1"></span>
+              <span class="hamburger-line line-2"></span>
+              <span class="hamburger-line line-3"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop"></div>
+    <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <a href="/index.html" class="brand-mark">Bihar <span>Tourism</span></a>
+        <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="/destinations.html" class="mobile-nav-link active">Destinations</a></li>
+        <li><a href="/experiences.html" class="mobile-nav-link">Experiences</a></li>
+        <li><a href="/about.html" class="mobile-nav-link">About Bihar</a></li>
+        <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="/contact.html" class="btn btn-primary" style="width: 100%;">Plan a Trip</a>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Page Header Banner -->
+      <section class="page-header">
+        <div class="page-header-pattern"></div>
+        <div class="container page-header-content">
+          <span class="page-header-kicker">Tourist Destinations</span>
+          <h1 class="page-header-title">Explore Bihar</h1>
+          <p class="page-header-desc">
+            Discover the profound spiritual sites, ancient world-renowned universities, historic imperial capitals, and lush sub-Himalayan tiger sanctuaries that define the soul of Bihar.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Catalog & Filtering Section -->
+      <section class="section">
+        <div class="container">
+          <!-- Controls Panel: Real-time Search Box + Category Filters -->
+          <div class="destination-controls-panel">
+            <!-- Search Box -->
+            <div class="search-box-wrapper">
+              <span class="search-icon-adornment" aria-hidden="true">🔍</span>
+              <input 
+                type="text" 
+                id="destination-search" 
+                class="destination-search-input" 
+                placeholder="Search destinations..." 
+                aria-label="Search destinations by name, category, or location"
+              />
+              <button 
+                type="button" 
+                id="search-clear-btn" 
+                class="search-clear-btn" 
+                aria-label="Clear search query"
+              >&times;</button>
+            </div>
+
+            <!-- Category Filter Bar -->
+            <div class="category-filter-bar" role="tablist" aria-label="Filter destinations by category">
+              <button type="button" class="category-pill-btn active" data-category="All">All</button>
+              <button type="button" class="category-pill-btn" data-category="History">History</button>
+              <button type="button" class="category-pill-btn" data-category="Spiritual">Spiritual</button>
+              <button type="button" class="category-pill-btn" data-category="Nature">Nature</button>
+            </div>
+          </div>
+
+          <!-- Empty State (No Destinations Found) -->
+          <div id="no-destinations-box" class="no-destinations-box" role="status">
+            <div class="no-destinations-icon">🏛️</div>
+            <h3 class="no-destinations-title">No destinations found</h3>
+            <p class="no-destinations-text">
+              We couldn't find any destinations matching your current search or category filter. Try refining your keywords or reset all filters.
+            </p>
+            <button type="button" id="reset-filters-btn" class="btn btn-primary">
+              Reset Filters
+            </button>
+          </div>
+
+          <!-- Dynamic Grid Container (Populated by destinations.js) -->
+          <div id="destinations-grid-container" class="destinations-grid">
+            <!-- Cards rendered dynamically by destinations.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Consultation Banner -->
+      <section class="container" style="margin-bottom: 5rem;">
+        <div class="banner-strip">
+          <div class="banner-strip-inner">
+            <span style="font-family: var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8125rem; color: var(--color-gold-light);">Tailored Travel Consultation</span>
+            <h2 class="banner-strip-title">Need Guidance Planning Your Journey?</h2>
+            <p class="banner-strip-text">
+              Connect with our official Bihar tourism specialists to organize certified guides, private cabs, and verified heritage hotel reservations.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+              <a href="/contact.html" class="btn btn-gold">Plan a Trip</a>
+              <a href="/experiences.html" class="btn btn-secondary">Explore Tour Circuits</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Reusable Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <!-- Col 1: Brand & Identity -->
+          <div class="footer-brand-col">
+            <h3 class="footer-brand-title">Bihar <span>Tourism</span></h3>
+            <p class="footer-tagline">“Explore. Experience. Remember.”</p>
+            <p class="footer-about-text">
+              The official portal promoting sustainable, cultural, and heritage tourism across the sacred land of Bihar. Discover millennia of civilization, architectural wonders, and timeless spiritual wisdom.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links-list">
+              <li><a href="/index.html" class="footer-link">Home</a></li>
+              <li><a href="/destinations.html" class="footer-link">Tourist Destinations</a></li>
+              <li><a href="/experiences.html" class="footer-link">Travel Experiences</a></li>
+              <li><a href="/about.html" class="footer-link">About Bihar</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact & Trip Planner</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Key Destinations -->
+          <div>
+            <h4 class="footer-col-title">Destinations</h4>
+            <ul class="footer-links-list">
+              <li><a href="/destination.html?id=bodh-gaya" class="footer-link">Bodh Gaya</a></li>
+              <li><a href="/destination.html?id=nalanda" class="footer-link">Nalanda Mahavihara</a></li>
+              <li><a href="/destination.html?id=rajgir" class="footer-link">Rajgir Peace Pagoda</a></li>
+              <li><a href="/destination.html?id=patna" class="footer-link">Patna Heritage</a></li>
+              <li><a href="/destination.html?id=vaishali" class="footer-link">Vaishali Republic</a></li>
+              <li><a href="/destination.html?id=valmiki-tiger-reserve" class="footer-link">Valmiki Tiger Reserve</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Project & Technology Info -->
+          <div>
+            <h4 class="footer-col-title">Project & Tech</h4>
+            <p class="footer-info-text">
+              <strong>Project:</strong> Bihar Tourism Digital Portal Initiative — Showcasing the historical legacy, spiritual sanctuaries, and biodiversity of Bihar.
+            </p>
+            <p class="footer-info-text">
+              <strong>Technology:</strong> Handcrafted with semantic HTML5, modern CSS3, and Vanilla JavaScript. Fast, lightweight, accessible, zero third-party framework dependencies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">
+            &copy; 2026 Bihar Tourism. All rights reserved. Built with pride for Bihar.
+          </p>
+          <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+            <a href="/about.html" class="footer-link">Heritage Charter</a>
+            <a href="/contact.html" class="footer-link">Tourist Help Desk</a>
+            <a href="/destinations.html" class="footer-link">Site Directory</a>
+            <a href="/admin-login.html" class="footer-link" style="color: var(--color-accent-gold); font-weight: 600;">🔒 Admin Portal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Assistance Widget -->
+    <a 
+      href="https://wa.me/918298076101?text=Namaste%20Bihar%20Tourism!%20I%20would%20like%20to%20inquire%20about%20traveling%20in%20Bihar." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="whatsapp-float-btn" 
+      aria-label="Chat with Bihar Tourism on WhatsApp"
+      title="Chat with Bihar Tourism Desk on WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" fill="currentColor" class="whatsapp-float-icon">
+        <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.3-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.4A11.6 11.6 0 1 1 16 27.5zm6.4-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3-.4.3-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.4 0-.6.2-.8.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2c0 1.9 1.4 3.7 1.6 3.9.2.3 2.7 4.1 6.5 5.8 3.9 1.6 3.9 1.1 4.6 1 .7 0 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.7-.5z"/>
+      </svg>
+      <span class="whatsapp-float-label">WhatsApp Desk</span>
+    </a>
+
+    <!-- Scripts: Core Navigation & Destinations Catalog Engine -->
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/destinations.js"></script>
+  </body>
+</html>

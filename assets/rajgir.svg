@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyRajgir" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#142634"/>
+      <stop offset="50%" stop-color="#28536b"/>
+      <stop offset="85%" stop-color="#6ba0a8"/>
+      <stop offset="100%" stop-color="#e3e7af"/>
+    </linearGradient>
+    <linearGradient id="hillGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d6c38"/>
+      <stop offset="60%" stop-color="#244722"/>
+      <stop offset="100%" stop-color="#132612"/>
+    </linearGradient>
+    <linearGradient id="stupaWhite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#eaeef2"/>
+      <stop offset="100%" stop-color="#b6c2cf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skyRajgir)"/>
+
+  <!-- Seven Hills of Rajgir (Ratnagiri, Vipulagiri, Vaibhargiri) -->
+  <path d="M0,420 Q200,280 400,320 T800,340 L800,600 L0,600 Z" fill="#244722" opacity="0.6"/>
+  <path d="M-50,450 Q260,260 520,330 T850,380 L850,600 L-50,600 Z" fill="url(#hillGreen)"/>
+
+  <!-- Ratnagiri Hill Top (Where Vishwa Shanti Stupa sits) -->
+  <g transform="translate(520, 310)">
+    <!-- Base Platform -->
+    <rect x="-110" y="25" width="220" height="18" rx="2" fill="#d0d7de"/>
+    <rect x="-90" y="10" width="180" height="16" fill="#f0f3f6"/>
+
+    <!-- Brilliant White Stupa Dome (Peace Pagoda) -->
+    <path d="M-75,10 A75,68 0 0,1 75,10 Z" fill="url(#stupaWhite)"/>
+
+    <!-- Central Golden Spire (Chattra / Harmika) -->
+    <rect x="-18" y="-70" width="36" height="15" fill="#f8fafc"/>
+    <polygon points="0,-120 -8,-70 8,-70" fill="#e5a93b"/>
+    <circle cx="0" cy="-125" r="7" fill="#fcd34d"/>
+    <circle cx="0" cy="-135" r="3" fill="#ffffff"/>
+
+    <!-- Four Golden Buddha Statues on Niches -->
+    <rect x="-14" y="-20" width="28" height="30" rx="10" fill="#202c39"/>
+    <circle cx="0" cy="-10" r="5" fill="#fcd34d"/>
+    <path d="M-8,6 Q0,-2 8,6 Z" fill="#fcd34d"/>
+
+    <rect x="-56" y="-10" width="18" height="20" rx="6" fill="#202c39"/>
+    <circle cx="-47" cy="-2" r="3" fill="#fcd34d"/>
+
+    <rect x="38" y="-10" width="18" height="20" rx="6" fill="#202c39"/>
+    <circle cx="47" cy="-2" r="3" fill="#fcd34d"/>
+  </g>
+
+  <!-- Famous Rajgir Aerial Chairlift Ropeway -->
+  <line x1="80" y1="520" x2="440" y2="330" stroke="#8da1b2" stroke-width="2.5" stroke-dasharray="8 3"/>
+  <line x1="80" y1="535" x2="440" y2="345" stroke="#63788a" stroke-width="2"/>
+
+  <!-- Cable Car 1 -->
+  <g transform="translate(260, 420)">
+    <line x1="0" y1="-12" x2="0" y2="10" stroke="#334155" stroke-width="2"/>
+    <rect x="-12" y="10" width="24" height="28" rx="4" fill="#c68a2c"/>
+    <rect x="-8" y="14" width="16" height="12" rx="2" fill="#e2e8f0" opacity="0.8"/>
+  </g>
+
+  <!-- Cable Car 2 -->
+  <g transform="translate(370, 365)">
+    <line x1="0" y1="-12" x2="0" y2="10" stroke="#334155" stroke-width="2"/>
+    <rect x="-10" y="10" width="20" height="24" rx="3" fill="#8b3a0f"/>
+    <rect x="-6" y="13" width="12" height="10" rx="2" fill="#e2e8f0" opacity="0.8"/>
+  </g>
+
+  <!-- Ropeway Pylon Tower in foreground -->
+  <g transform="translate(180, 465)" stroke="#334155" stroke-width="3">
+    <line x1="0" y1="0" x2="-20" y2="80"/>
+    <line x1="0" y1="0" x2="20" y2="80"/>
+    <line x1="-30" y1="0" x2="30" y2="0"/>
+    <line x1="-12" y1="40" x2="12" y2="40"/>
+  </g>
+</svg>

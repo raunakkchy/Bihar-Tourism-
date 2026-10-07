@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyVaishali" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181a20"/>
+      <stop offset="40%" stop-color="#3c2f1f"/>
+      <stop offset="80%" stop-color="#8c5825"/>
+      <stop offset="100%" stop-color="#f1b569"/>
+    </linearGradient>
+    <linearGradient id="sandstonePillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fde8b8"/>
+      <stop offset="35%" stop-color="#d4a359"/>
+      <stop offset="80%" stop-color="#885b24"/>
+      <stop offset="100%" stop-color="#4e300d"/>
+    </linearGradient>
+    <linearGradient id="stupaBrick" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a84319"/>
+      <stop offset="100%" stop-color="#461604"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#skyVaishali)"/>
+
+  <!-- Morning Sun -->
+  <circle cx="280" cy="240" r="70" fill="#fff5d0"/>
+  <circle cx="280" cy="240" r="160" fill="#f1b569" opacity="0.25"/>
+
+  <!-- Green Archaeological Grounds -->
+  <rect y="460" width="800" height="140" fill="#20361d"/>
+
+  <!-- Ancient Brick Relic Stupa of Lord Buddha (in background) -->
+  <g transform="translate(560, 410)">
+    <path d="M-180,60 A180,120 0 0,1 180,60 Z" fill="url(#stupaBrick)"/>
+    <rect x="-30" y="-65" width="60" height="15" fill="#461604"/>
+    <!-- Excavated brick layers -->
+    <line x1="-160" y1="30" x2="160" y2="30" stroke="#f68e56" stroke-width="2" opacity="0.4"/>
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#f68e56" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Complete Ashokan Pillar (The Vaishali Kolhua Pillar) -->
+  <g transform="translate(280, 240)">
+    <!-- Base Platform -->
+    <rect x="-50" y="220" width="100" height="20" fill="#3a210b" rx="2"/>
+    <rect x="-65" y="240" width="130" height="20" fill="#251304"/>
+
+    <!-- Monolithic Polished Sandstone Column -->
+    <polygon points="-16,-120 16,-120 22,220 -22,220" fill="url(#sandstonePillar)"/>
+
+    <!-- Inverted Lotus Capital (Bell Capital) -->
+    <path d="M-28,-120 C-32,-135 -18,-150 0,-152 C18,-150 32,-135 28,-120 Z" fill="url(#sandstonePillar)"/>
+    <rect x="-24" y="-122" width="48" height="6" fill="#885b24"/>
+
+    <!-- Abacus (Circular Platform with Geese/Lotus carvings) -->
+    <rect x="-26" y="-160" width="52" height="12" fill="#d4a359" rx="2"/>
+
+    <!-- Single Magnificent Seated Lion Capital facing North (towards Kushinagar) -->
+    <g transform="translate(0, -165)">
+      <!-- Lion Body & Mane -->
+      <path d="M-18,0 C-24,-14 -10,-35 4,-38 C16,-40 22,-25 18,-10 C24,2 2,-2 -18,0 Z" fill="#d4a359"/>
+      <!-- Lion Head & Roar -->
+      <circle cx="8" cy="-34" r="10" fill="#fde8b8"/>
+      <path d="M12,-38 L16,-34 L12,-30 Z" fill="#4e300d"/>
+      <!-- Paws resting forward -->
+      <rect x="-14" y="-6" width="10" height="8" rx="2" fill="#885b24"/>
+      <rect x="2" y="-6" width="10" height="8" rx="2" fill="#885b24"/>
+    </g>
+  </g>
+
+  <!-- Abhishek Pushkarini Sacred Water Tank Reflection (Front Right) -->
+  <ellipse cx="600" cy="530" rx="140" ry="25" fill="#1b414f" stroke="#8c5825" stroke-width="2"/>
+  <ellipse cx="600" cy="530" rx="90" ry="12" fill="#2a5f74" opacity="0.7"/>
+</svg>
