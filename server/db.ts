@@ -62,6 +62,14 @@ const SEED_ADMINS: IAdmin[] = [
     passwordHash: DEFAULT_PASSWORD_HASH,
     role: 'Super Administrator',
     createdAt: new Date().toISOString()
+  },
+  {
+    id: 'admin-02',
+    email: 'raunakkchy@gmail.com',
+    name: 'Raunak Kumar (Tourism Administrator)',
+    passwordHash: DEFAULT_PASSWORD_HASH,
+    role: 'Super Administrator',
+    createdAt: new Date().toISOString()
   }
 ];
 
@@ -116,14 +124,14 @@ const SEED_DESTINATIONS: IDestination[] = [
     slug: 'bodh-gaya',
     name: 'Bodh Gaya',
     category: 'Spiritual',
-    shortDescription: 'The cradle of world Buddhism and UNESCO World Heritage site where Prince Siddhartha attained supreme supreme enlightenment under the sacred Bodhi Tree.',
-    image: '/assets/bodhgaya.svg',
+    shortDescription: 'The cradle of world Buddhism and UNESCO World Heritage site where Prince Siddhartha attained supreme enlightenment under the sacred Bodhi Tree.',
+    image: '/uploads/bodhgaya-gallery.jpg',
     location: 'Gaya District, South Bihar',
     overview: 'Bodh Gaya is the most sanctified Buddhist pilgrimage center on Earth. Centerpiece is the towering 50-meter 5th-century Mahabodhi Temple.',
     fullDescription: 'Located beside the tranquil Falgu (Neranjara) River, Bodh Gaya is where Siddhartha Gautama meditated for 49 days and attained supreme enlightenment in 528 BCE.',
     bestTime: 'October to March',
     highlights: ['UNESCO Mahabodhi Temple Complex', 'Sacred Bodhi Tree (Sri Maha Bodhi)', 'Vajrasana (Diamond Throne of Emperor Ashoka)', '80-Foot Giant Buddha Statue', 'International Monasteries (Thai, Tibetan, Bhutanese, Japanese)'],
-    gallery: ['/assets/bodhgaya.svg', '/uploads/bodh-gaya-gallery-1.jpg'],
+    gallery: ['/uploads/bodhgaya-gallery.jpg', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80', '/assets/bodhgaya.svg'],
     published: true,
     featured: true
   },
@@ -133,13 +141,13 @@ const SEED_DESTINATIONS: IDestination[] = [
     name: 'Nalanda',
     category: 'History',
     shortDescription: 'The ancient residential international university of world renown. UNESCO World Heritage ruins celebrating 800 years of global intellectual brilliance.',
-    image: '/assets/nalanda.svg',
+    image: 'https://images.unsplash.com/photo-1598890777032-bde835ba27c2?auto=format&fit=crop&w=1200&q=80',
     location: 'Nalanda District, Central Bihar',
     overview: 'Founded in the 5th century CE under the Gupta Empire, Nalanda was the world’s foremost residential university housing over 10,000 scholars and 2,000 teachers.',
     fullDescription: 'Spread over extensive excavated brick ruins, Nalanda University flourished for over seven centuries as an international seat of learning attracting scholars from China, Korea, Japan, Tibet, and Persia.',
     bestTime: 'October to March',
     highlights: ['UNESCO Archaeological Ruins of Nalanda Mahavihara', 'Stupa of Sariputra (Temple No. 3)', 'Nalanda Archaeological Museum', 'Hiuen Tsang (Xuanzang) Memorial Hall', 'Nav Nalanda Mahavihara Post-Graduate Institute'],
-    gallery: ['/assets/nalanda.svg'],
+    gallery: ['https://images.unsplash.com/photo-1598890777032-bde835ba27c2?auto=format&fit=crop&w=1200&q=80', '/assets/nalanda.svg'],
     published: true,
     featured: true
   },
@@ -149,13 +157,13 @@ const SEED_DESTINATIONS: IDestination[] = [
     name: 'Rajgir',
     category: 'History / Spiritual',
     shortDescription: 'Ancient capital of Magadha nestled amidst seven scenic hills. Revered by Buddhists and Jains for Griddhakuta Peak and the serene Vishwa Shanti Stupa.',
-    image: '/assets/rajgir.svg',
+    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=80',
     location: 'Nalanda District, Central Bihar',
     overview: 'Surrounded by seven sacred hills, Rajgir (Rajagriha) was the original capital of the mighty Magadha kingdom ruled by King Bimbisara and Ajatashatru.',
     fullDescription: 'Set against a dramatic ring of verdant hills, Rajgir is woven deeply into the tapestry of the Mahabharata and the lives of both Lord Buddha and Lord Mahavira.',
     bestTime: 'October to March',
     highlights: ['Aerial Ropeway to Vishwa Shanti Stupa', 'Griddhakuta (Vulture’s Peak)', 'Venuvana Bamboo Grove of Buddha', 'Natural Hot Water Sulphur Springs (Brahmakund)', 'Glass Floor Suspension Bridge & Nature Safari'],
-    gallery: ['/assets/rajgir.svg'],
+    gallery: ['https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=80', '/assets/rajgir.svg'],
     published: true,
     featured: true
   },
@@ -165,13 +173,13 @@ const SEED_DESTINATIONS: IDestination[] = [
     name: 'Patna (Pataliputra)',
     category: 'History / Culture',
     shortDescription: 'Historic metropolis on the banks of the Holy Ganges. Legendary imperial seat of Chandragupta Maurya and Emperor Ashoka, and birthplace of Guru Gobind Singh Ji.',
-    image: '/assets/patna.svg',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80',
     location: 'Patna District, Central Bihar',
     overview: 'With over three millennia of recorded history, ancient Pataliputra was one of the largest cities of the ancient world.',
     fullDescription: 'Contemporary Patna seamlessly weaves imperial imperial heritage with modern cultural vitality.',
     bestTime: 'October to March',
     highlights: ['Takht Sri Patna Sahib (Birthplace of 10th Sikh Guru)', 'Bihar Museum (World-Class Interactive Museum)', 'Golghar Iconic Granary & Ganges Panoramic View', 'Kumhrar Mauryan Excavation Ruins', 'Patna Planetarium & Riverfront Ganga Aarti Promenade'],
-    gallery: ['/assets/patna.svg'],
+    gallery: ['https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80', '/assets/patna.svg'],
     published: true,
     featured: true
   },
@@ -181,13 +189,13 @@ const SEED_DESTINATIONS: IDestination[] = [
     name: 'Vaishali',
     category: 'History / Spiritual',
     shortDescription: 'The world’s first recorded democratic republic. Sacred birthplace of Lord Mahavira and location of Emperor Ashoka’s polished sandstone lion pillar.',
-    image: '/assets/vaishali.svg',
+    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80',
     location: 'Vaishali District, North Bihar',
     overview: 'Capital of the ancient Licchavi republic, site of Buddha’s Last Sermon, Relic Stupa, and Ashokan Lion Pillar.',
     fullDescription: 'Vaishali occupies a celebrated place in world civilization as the cradle of republican democracy. It was also where Lord Buddha preached his Last Sermon and accepted food from courtesan Amrapali.',
     bestTime: 'October to March',
     highlights: ['Ashokan Polished Lion Pillar & Stupa', 'Buddha Relic Stupa Site', 'Abhishek Pushkarni Sacred Coronation Tank', 'Kundalpur (Birthplace of Lord Mahavira)', 'Vishwa Shanti Stupa Vaishali'],
-    gallery: ['/assets/vaishali.svg'],
+    gallery: ['https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80', '/assets/vaishali.svg'],
     published: true,
     featured: true
   },
@@ -197,13 +205,13 @@ const SEED_DESTINATIONS: IDestination[] = [
     name: 'Valmiki Tiger Reserve',
     category: 'Nature',
     shortDescription: 'Lush Himalayan foothills and moist Sal forests along the Gandak River. Bihar’s premier eco-tourism sanctuary home to Bengal tigers, rhinos, and hornbills.',
-    image: '/assets/valmiki.svg',
+    image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80',
     location: 'West Champaran District, North Bihar',
     overview: 'Over 898 sq km of pristine wilderness in the Terai region. Jungle jeep safaris, river rafting, and canopy lodges.',
     fullDescription: 'Spread across nearly 900 sq km of undisturbed Terai bhabar landscape along the Indo-Nepal border, Valmiki Tiger Reserve is Bihar’s crown jewel of natural heritage.',
     bestTime: 'November to April',
     highlights: ['Jungle Jeep Wildlife Safari', 'Gandak River Boat Safari', 'Kaleshwar & Valmiki Ashrams', 'Canopy Eco-Cottages & Treehouses', 'Birdwatching (Over 250 Avian Species)'],
-    gallery: ['/assets/valmiki.svg'],
+    gallery: ['https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80', '/assets/valmiki.svg'],
     published: true,
     featured: true
   }
@@ -341,10 +349,30 @@ class DatabaseService {
         );
       }
 
-      const destCount = await this.DestinationModel.countDocuments();
-      if (destCount === 0) {
-        console.log('[MongoDB] Seeding initial Bihar Tourism destination catalog...');
-        await this.DestinationModel.insertMany(SEED_DESTINATIONS);
+      // Always sync high-definition photographic images and destinations catalog
+      for (const dest of SEED_DESTINATIONS) {
+        await this.DestinationModel.findOneAndUpdate(
+          { $or: [{ id: dest.id }, { slug: dest.slug }, { slug: dest.id }] },
+          {
+            $set: {
+              id: dest.id,
+              slug: dest.slug || dest.id,
+              name: dest.name,
+              category: dest.category,
+              shortDescription: dest.shortDescription,
+              overview: dest.overview,
+              fullDescription: dest.fullDescription,
+              location: dest.location,
+              bestTime: dest.bestTime,
+              highlights: dest.highlights,
+              image: dest.image,
+              gallery: dest.gallery,
+              published: true,
+              featured: true
+            }
+          },
+          { upsert: true, new: true, setDefaultsOnInsert: true }
+        );
       }
 
       const enqCount = await this.EnquiryModel.countDocuments();
@@ -371,15 +399,24 @@ class DatabaseService {
       ]
     };
 
-    // If user typed "admin" or "admin-01", match "admin@bihartourism.gov.in"
-    if (clean.toLowerCase() === 'admin' || clean.toLowerCase() === 'admin-01') {
+    // If user typed "admin", "admin-01", "coordinator", "raunak", etc.
+    const lower = clean.toLowerCase();
+    if (lower === 'admin' || lower === 'admin-01' || lower === 'coordinator') {
       query.$or.push({ email: 'admin@bihartourism.gov.in' });
       query.$or.push({ id: 'admin-01' });
+    } else if (lower.includes('raunak') || lower === 'raunakkchy@gmail.com') {
+      query.$or.push({ email: 'raunakkchy@gmail.com' });
+      query.$or.push({ id: 'admin-02' });
     }
 
     const doc = await this.AdminModel.findOne(query).lean();
-    if (!doc && (clean.toLowerCase() === 'admin' || clean.toLowerCase() === 'admin@bihartourism.gov.in' || clean.toLowerCase() === 'admin-01')) {
-      return SEED_ADMINS[0];
+    if (!doc) {
+      if (lower === 'admin' || lower === 'admin@bihartourism.gov.in' || lower === 'admin-01') {
+        return SEED_ADMINS[0];
+      }
+      if (lower.includes('raunak') || lower === 'raunakkchy@gmail.com') {
+        return SEED_ADMINS[1];
+      }
     }
     return doc ? formatDoc<IAdmin>(doc) : null;
   }

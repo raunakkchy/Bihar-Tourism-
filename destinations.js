@@ -12,7 +12,12 @@ const destinationsData = [
     category: 'Spiritual',
     categories: ['Spiritual'],
     shortDescription: 'The supreme spiritual cradle where Prince Siddhartha attained Enlightenment beneath the sacred Bodhi Tree in 528 BCE. Home to the UNESCO World Heritage Mahabodhi Temple and multinational Buddhist monasteries.',
-    image: '/assets/bodhgaya.svg',
+    image: '/uploads/bodhgaya-gallery.jpg',
+    gallery: [
+      '/uploads/bodhgaya-gallery.jpg',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+      '/assets/bodhgaya.svg'
+    ],
     location: 'Gaya District, South Bihar (115 km south of Patna)',
     overview: 'Bodh Gaya is globally venerated as the holiest of the four primary Buddhist pilgrimage sites. Here, on the serene banks of the Phalgu River (ancient Neranjara), Prince Siddhartha Gautama sat in deep meditative contemplation under a pipal tree and attained Buddhahood. Today, Bodh Gaya is an international sanctuary of peaceful meditation, drawing monks, scholars, and spiritual seekers from Japan, Thailand, Sri Lanka, Bhutan, Tibet, and across the globe.',
     historicalSignificance: 'Emperor Ashoka visited Bodh Gaya around 260 BCE, approximately 250 years after the Buddha attained Enlightenment. He erected the original temple and the revered Diamond Throne (Vajrasana) marking the exact spot where the Buddha sat. In the 5th–6th century CE during the Gupta Dynasty, the present majestic 55-meter high sandstone Mahabodhi Temple spire was constructed, standing as one of the earliest brick temples surviving in eastern India.',
@@ -177,7 +182,11 @@ const destinationsData = [
     category: 'History',
     categories: ['History'],
     shortDescription: 'The legendary Pataliputra, seat of the Mauryan and Gupta empires along the holy Ganges. Features the beehive Golghar, world-class Bihar Museum, Takht Sri Patna Sahib, and Kumhrar ruins.',
-    image: '/assets/patna.svg',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80',
+      '/assets/patna.svg'
+    ],
     location: 'Central Bihar along the southern bank of the River Ganges',
     overview: 'Patna, known in antiquity as Pataliputra, is one of the oldest continuously inhabited cities on earth, founded in 490 BCE by King Ajatashatru. As the imperial capital of Emperor Chandragupta Maurya and Emperor Ashoka the Great, it was described by Greek ambassador Megasthenes as a fortified metropolis surrounded by 570 towers and 64 gates. Today, modern Patna bridges three millennia of culture, academic treasures, river spirituality, and vibrant culinary arts.',
     historicalSignificance: 'Pataliputra was the cradle from which Emperor Ashoka ruled an empire that stretched across South Asia and disseminated the ideals of dhamma and non-violence. It was the birthplace of Guru Gobind Singh Ji (1666 CE), the tenth Sikh Guru who founded the Khalsa. Scholars like Chanakya composed the <em>Arthashastra</em>, and astronomer Aryabhata pioneered Indian trigonometry and the heliocentric theory here.',
@@ -232,7 +241,11 @@ const destinationsData = [
     category: 'History / Spiritual',
     categories: ['History', 'Spiritual'],
     shortDescription: 'The world’s first democratic republic where the Licchavis governed with an elected assembly. Birthplace of Lord Mahavira and location of Emperor Ashoka’s intact monolithic Lion Pillar and Relic Stupa.',
-    image: '/assets/vaishali.svg',
+    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80',
+      '/assets/vaishali.svg'
+    ],
     location: 'Vaishali District, North Bihar (55 km north of Patna via Digha Bridge)',
     overview: 'Vaishali holds an immortal place in world history as the capital of the ancient Licchavi Republic (Vajjian Confederacy), recognized as the earliest known democratic republic in human history with an elected senate. It is deeply sacred to both Jains and Buddhists: Lord Mahavira, the 24th Tirthankara, was born at Kundalpur in Vaishali in 599 BCE; and Lord Buddha preached his Last Sermon here, officially inaugurating the Bhikkhuni Sangha (female monastic order).',
     historicalSignificance: 'Following the Buddha’s Mahaparinirvana, the Licchavis erected an earthen stupa over one-eighth of his sacred ashes, discovered by archaeologists in 1958. Emperor Ashoka erected one of his finest polished sandstone pillars here, uniquely crowned with a single seated lion facing north along the Buddha’s final pilgrimage path to Kushinagar.',
@@ -287,7 +300,11 @@ const destinationsData = [
     category: 'Nature',
     categories: ['Nature'],
     shortDescription: 'Bihar’s crowning eco-tourism wilderness spanning 898 sq km of dense Sal forest along the Gandak River at the Himalayan foothills. Safe haven for Bengal tigers, leopards, rhinos, and elephants.',
-    image: '/assets/valmiki.svg',
+    image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80',
+      '/assets/valmiki.svg'
+    ],
     location: 'West Champaran District, North-West Bihar (along the Indo-Nepal international border)',
     overview: 'Nestled against the dramatic backdrop of the Shiwalik Himalayan foothills, Valmiki Tiger Reserve (VTR) is the only national park and tiger reserve in Bihar. Spanning 898 square kilometers of moist deciduous Sal forests, cane brakes, and sprawling wetlands along the Narayani (Gandak) River, Valmiki forms an unbroken transboundary wildlife corridor with Nepal’s Chitwan National Park. It is celebrated for its thriving royal Bengal tiger population, wilderness jeep safaris, and pristine river ecology.',
     historicalSignificance: 'According to the ancient epic Ramayana, the hermitage of Maharshi Valmiki (Valmiki Ashram) where Devi Sita gave birth to Lava and Kusha was located here near the confluence of the Sonaha and Gandak rivers. Emperor Ashoka passed through this region on his imperial pilgrimage, leaving behind the historic Lauriya Nandangarh pillar nearby.',
@@ -381,6 +398,7 @@ function initDestinationsCatalog() {
             alt="${dest.name} in Bihar" 
             class="dest-card-img" 
             loading="lazy"
+            onerror="if(this.src.indexOf('.svg')===-1){this.src='/assets/${dest.id}.svg';}"
           />
         </div>
         <div class="dest-card-content">
@@ -562,6 +580,7 @@ function initDestinationDetailPage() {
           src="${destination.image}" 
           alt="${destination.name} monument view" 
           class="dest-detail-hero-img" 
+          onerror="if(this.src.indexOf('.svg')===-1){this.src='/assets/${destination.id}.svg';}"
         />
         <div class="dest-detail-hero-scrim"></div>
       </div>
@@ -627,6 +646,28 @@ function initDestinationDetailPage() {
             `).join('')}
           </ul>
         </div>
+
+        <!-- Visual Photo Gallery -->
+        ${(destination.gallery && destination.gallery.length > 0) ? `
+        <div style="margin-top: 2.5rem;">
+          <h2 class="dest-detail-section-title">Photo Gallery & Visual Highlights</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+            ${destination.gallery.map((imgUrl, i) => `
+              <div style="height: 175px; border-radius: 8px; overflow: hidden; background: #1e293b; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                <img 
+                  src="${imgUrl}" 
+                  alt="${destination.name} photo ${i+1}" 
+                  style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
+                  loading="lazy"
+                  onerror="this.src='/assets/${destination.id}.svg'"
+                  onmouseover="this.style.transform='scale(1.06)'"
+                  onmouseout="this.style.transform='scale(1)'"
+                />
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        ` : ''}
       </div>
 
       <!-- Right Column: Sidebar Travel Information -->
@@ -688,11 +729,13 @@ async function syncRemoteDestinations() {
     if (data.success && Array.isArray(data.destinations)) {
       const remoteIds = new Set(data.destinations.map(d => d.id || d.slug));
 
-      // Remove deleted or unpublished from client array
-      for (let i = destinationsData.length - 1; i >= 0; i--) {
-        const item = destinationsData[i];
-        if (!remoteIds.has(item.id) && !remoteIds.has(item.slug)) {
-          destinationsData.splice(i, 1);
+      // Remove deleted or unpublished only if server returns full catalog
+      if (data.destinations.length >= 6) {
+        for (let i = destinationsData.length - 1; i >= 0; i--) {
+          const item = destinationsData[i];
+          if (!remoteIds.has(item.id) && !remoteIds.has(item.slug)) {
+            destinationsData.splice(i, 1);
+          }
         }
       }
 

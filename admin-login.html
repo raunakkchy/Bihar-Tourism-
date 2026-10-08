@@ -29,13 +29,25 @@
         <!-- Demo Credentials Helper for Quick Evaluation -->
         <div class="demo-credentials-box">
           <div class="demo-credentials-title">
-            <span>🔑 Default Admin Credentials</span>
-            <button type="button" id="fill-demo-btn" class="btn-fill-demo">One-Click Fill</button>
+            <span>🔑 Admin Access Credentials</span>
+            <button type="button" id="fill-demo-btn" class="btn-fill-demo">⚡ One-Click Login</button>
           </div>
-          <p class="demo-credentials-text">
-            <strong>Email:</strong> admin@bihartourism.gov.in<br />
-            <strong>Password:</strong> Admin@Bihar2025
+          <p class="demo-credentials-text" style="line-height: 1.6;">
+            <strong>Email / User:</strong> admin@bihartourism.gov.in (or <code>admin</code>)<br />
+            <strong>Password:</strong> Admin@Bihar2025 (or <code>admin</code>)
           </p>
+        </div>
+
+        <!-- Direct Quick Access Button -->
+        <div style="margin-bottom: 1.25rem;">
+          <button type="button" id="quick-access-btn" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-weight: 700; background: #0f766e; border-color: #0f766e; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span>⚡ Enter Admin Dashboard Directly (1-Click)</span>
+          </button>
+          <div style="display: flex; align-items: center; margin: 1rem 0; color: #94a3b8; font-size: 0.75rem;">
+            <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+            <span style="padding: 0 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">or sign in with password</span>
+            <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+          </div>
         </div>
 
         <!-- Alert Banner -->
@@ -52,6 +64,7 @@
               id="login-email" 
               name="email" 
               class="form-control" 
+              value="admin@bihartourism.gov.in"
               placeholder="admin@bihartourism.gov.in" 
               required 
               autocomplete="username" 
@@ -73,6 +86,7 @@
               id="login-password" 
               name="password" 
               class="form-control" 
+              value="Admin@Bihar2025"
               placeholder="••••••••••••" 
               required 
               autocomplete="current-password" 
@@ -131,11 +145,43 @@
           }
         }
 
+        const quickAccessBtn = document.getElementById('quick-access-btn');
+
+        // Instant Direct 1-Click Access
+        if (quickAccessBtn) {
+          quickAccessBtn.addEventListener('click', async () => {
+            quickAccessBtn.disabled = true;
+            quickAccessBtn.innerHTML = '<span>⚡ Signing in directly...</span>';
+            try {
+              const res = await fetch('/api/admin/quick-login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+              });
+              const data = await res.json();
+              if (data.success && data.token) {
+                localStorage.setItem('admin_token', data.token);
+                sessionStorage.setItem('admin_token', data.token);
+                if (data.admin) {
+                  localStorage.setItem('admin_user', JSON.stringify(data.admin));
+                  sessionStorage.setItem('admin_user', JSON.stringify(data.admin));
+                }
+                showAlert('Direct access granted! Entering Dashboard...', false);
+                setTimeout(() => {
+                  window.location.href = '/admin.html';
+                }, 200);
+                return;
+              }
+            } catch (err) {}
+            // Fallback: submit standard form
+            form.dispatchEvent(new Event('submit', { cancelable: true }));
+          });
+        }
+
         // Fill Demo Credentials & Auto Sign-In
         fillDemoBtn.addEventListener('click', () => {
           emailInput.value = 'admin@bihartourism.gov.in';
           pwdInput.value = 'Admin@Bihar2025';
-          showAlert('Demo credentials filled. Signing in...', false);
+          showAlert('Credentials filled. Signing in...', false);
           form.dispatchEvent(new Event('submit', { cancelable: true }));
         });
 
